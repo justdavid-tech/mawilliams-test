@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+U:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+/* ========================================
+   THEME TOKENS
+======================================== */
+
+@theme {
+  /* Brand Colors */
+  --color-brand-primary: #2F5233;
+  --color-brand-deep: #1E3622;
+  --color-brand-mid: #3D6B42;
+  --color-gold-accent: #C9A84C;
+  --color-pale-green: #EBF2EB;
+
+  /* Neutral Colors */
+  --color-text-ink: #1A1A18;
+  --color-text-secondary: #7A7A74;
+  --color-cream: #FAF8F4;
+  --color-white: #FFFFFF;
+
+  /* Semantic Colors */
+  --color-primary: #2F5233;
+  --color-primary-dark: #1E3622;
+  --color-primary-light: #3D6B42;
+  --color-secondary: #C9A84C;
+
+  --color-background: #FAF8F4;
+  --color-surface: #FFFFFF;
+
+  --color-text-primary: #1A1A18;
+  --color-muted: #7A7A74;
+
+  /* Card & Layout Colors */
+  --color-page: #FAF8F4;
+  --color-card: #FFFFFF;
+  --color-card-alt: #EBF2EB;
+
+  /* Border Colors */
+  --color-border-primary: #2F5233;
+  --color-border-secondary: #C9A84C;
+  --color-border-muted: #7A7A74;
+
+  /* Focus Ring Colors */
+  --color-ring-primary: #2F5233;
+  --color-ring-accent: #C9A84C;
+
+  /* Typography */
+  --font-heading: "M PLUS U", system-ui, sans-serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
+}
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+
+/* ─── Global Reading Progress Bar ──────────────────────── */
+.gc-art-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(47,82,51,0.1);
+  z-index: 9999;
+}
+
+.gc-art-progress-fill {
+  height: 100%;
+  background: var(--gold, #c9a84c);
+  transition: width .1s linear;
+}
