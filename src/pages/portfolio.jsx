@@ -22,7 +22,7 @@ const GROUP_ENTITIES = [
     name: "Lambert Willis Nigeria",
     hq: "Lagos, Nigeria",
     type: "African Family Office",
-    desc: "Holds Nigerian land, property, and local investments. Acts as M.A. Williams' proxy in every African venture — providing local shareholding, directorship, and full representation under Nigerian law.",
+    desc: "Holds Nigerian land, property, and local investments. Acts as M.A. Williams' proxy in every African venture, providing local shareholding, directorship, and full representation under Nigerian law.",
     pillars: ["Land Holdings", "Local Investments", "Proxy Directorship", "Land Use Act Navigation"],
     accent: "#3D6B42",
   },
@@ -44,7 +44,7 @@ const GROUP_ENTITIES = [
     name: "Shaishen",
     hq: "Nigeria · UK",
     type: "Agricultural Brand",
-    desc: "The consumer-facing brand for the group's premium agricultural products — including hibiscus calyces, cold-pressed seed oil, and processed produce destined for UK and EU markets.",
+    desc: "The consumer-facing brand for the group's premium agricultural products, including hibiscus calyces, cold-pressed seed oil, and processed produce destined for UK and EU markets.",
     pillars: ["Hibiscus Products", "Cold-Pressed Oils", "UK & EU Export", "Premium Positioning"],
     accent: "#C9A84C",
   },
@@ -55,7 +55,7 @@ const GROUP_ENTITIES = [
     name: "EZ Gro Garden",
     hq: "Nigeria",
     type: "Agricultural Brand",
-    desc: "The group's entry-level agricultural brand — making quality growing inputs, guidance, and practice accessible to smallholder farmers, homesteaders, and urban growers across Nigeria.",
+    desc: "The group's entry-level agricultural brand, making quality growing inputs, guidance, and practice accessible to smallholder farmers, homesteaders, and urban growers across Nigeria.",
     pillars: ["Smallholder Focus", "Urban Growing", "Input Accessibility", "Nigeria-Wide"],
     accent: "#3D6B42",
   },
@@ -138,17 +138,17 @@ function Hero() {
         <div className={`port-hero-left ${vis ? "vis-up" : ""}`}>
           <Kicker label="Portfolio & Brands" light />
           <h1 className="port-hero-h1" id="port-hero-h">
-            One architect.<br />One vision.<br />
-            <span className="port-hero-accent">Six expressions.</span>
+            One Architect<br />One Vision<br />
+            <span className="port-hero-accent">Six expressions</span>
           </h1>
         </div>
 
         <div className={`port-hero-right ${vis ? "vis-right" : ""}`}>
           <p className="port-hero-body">
-            The M.A. Williams Group is not a collection of separate businesses. It is a single ecosystem — deliberately designed so that each entity reinforces every other. The IP lives at the top. The assets are held in Africa. The services are delivered through the operator. The knowledge is exported through the Institute.
+            The M.A. Williams Group is not a collection of separate businesses. It is a single ecosystem deliberately designed so that each entity reinforces every other. The IP lives at the top. The assets are held in Africa. The services are delivered through the operator. The knowledge is exported through the Institute.
           </p>
           <p className="port-hero-body">
-            What you see in this portfolio is not a list of projects. It is the architecture of a generational institution — built over three decades, stress-tested in the field, and structured to outlast any single venture.
+            What you see in this portfolio is not a list of projects. It is the architecture of a generational institution built over three decades, stress-tested in the field, and structured to outlast any single venture.
           </p>
           <div className="port-hero-stats">
             {[
@@ -186,7 +186,7 @@ function TheGroup() {
           <Kicker label="The group" />
           <h2 className="port-section-h" id="port-group-h">The Ecosystem</h2>
           <p className="port-section-sub">
-            Five entities. One strategy. Each is distinct in its legal registration, purpose, and operating scope — and each is inseparable from the others in function.
+            Five entities. One strategy. Each is distinct in its legal registration, purpose, and operating scope and each is inseparable from the others in function.
           </p>
         </div>
 
@@ -202,7 +202,7 @@ function TheGroup() {
           </div>
           <div className="pef-right">
             <p className="pef-desc">
-              The apex entity of the group. M.A. Williams & Co. holds the trademarks, proprietary methodologies, and curriculum frameworks that every operating entity runs on. It owns the Institute. It runs the Gateway Consulting practice. It contracts internationally with donors and DFIs. It is the institutional expression of Yomi Williams's life's work — structured for longevity, governed under English law.
+              The apex entity of the group. M.A. Williams & Co. holds the trademarks, proprietary methodologies, and curriculum frameworks that every operating entity runs on. It owns the Institute. It runs the Gateway Consulting practice. It contracts internationally with donors and DFIs. It is the institutional expression of Yomi Williams's life's work structured for longevity, governed under English law.
             </p>
             <div className="pef-tags">
               {["IP & Trademarks", "M.A. Williams Institute", "Gateway Consulting", "International Contracting", "Family Office"].map(t => (
@@ -262,13 +262,13 @@ function HibiscusEstate() {
           </div>
           <div className={`port-venture-header-right ${vis ? "vis-right" : ""}`}>
             <p className="port-venture-body">
-              The Hibiscus Estate is a joint-venture 200-hectare regenerative agroforestry estate in Ogun State, Nigeria. It is the living proof of every methodology the group teaches, licences, and deploys. It is not a demonstration farm. It is a commercial operation — producing, processing, and exporting premium hibiscus products to the UK and EU under the Shaishen Foods brand.
+              The Hibiscus Estate is a joint-venture 200-hectare regenerative agroforestry estate in Ogun State, Nigeria. It is the living proof of every methodology the group teaches, licences, and deploys. It is not a demonstration farm. It is a commercial operation producing, processing, and exporting premium hibiscus products to the UK and EU under the Shaishen Foods brand.
             </p>
             <p className="port-venture-body">
-              The estate integrates centre-pivot irrigation, precision CropX multi-depth soil sensing, Agrivi farm management software, and solar energy infrastructure across its full 200 hectares — making it one of the most technically advanced regenerative agroforestry operations in West Africa.
+              The estate integrates centre-pivot irrigation, precision CropX multi-depth soil sensing, Agrivi farm management software, and solar energy infrastructure across its full 200 hectares making it one of the most technically advanced regenerative agroforestry operations in West Africa.
             </p>
             <blockquote className="port-venture-quote">
-              <p>"The farm is the curriculum. Every system on this estate is a live case study — for our students, for our partners, and for the world that is beginning to understand what African agriculture is actually capable of."</p>
+              <p>"The farm is the curriculum. Every system on this estate is a live case study for our students, for our partners, and for the world that is beginning to understand what African agriculture is actually capable of."</p>
               <cite>— Yomi Williams</cite>
             </blockquote>
           </div>
@@ -332,13 +332,13 @@ function VerticalFarms() {
           </div>
           <div className={`port-venture-header-right ${vis ? "vis-right" : ""}`}>
             <p className="port-venture-body port-venture-body-dark">
-              Between 2017 and 2021, Yomi Williams designed and deployed five automated hydroponic urban vertical farms across Lagos — becoming Africa's pioneer in commercial urban controlled-environment agriculture. These were not pilots. They were fully operational commercial installations, each purpose-built for its location and market.
+              Between 2017 and 2021, Yomi Williams designed and deployed five automated hydroponic urban vertical farms across Lagos, becoming Africa's pioneer in commercial urban controlled-environment agriculture. These were not pilots. They were fully operational commercial installations, each purpose-built for its location and market.
             </p>
             <p className="port-venture-body port-venture-body-dark">
-              One installation was Nigeria's first restaurant-integrated grow system — fresh produce grown on-site for direct kitchen use, eliminating the supply chain between farm and plate. Water consumption was reduced by 50% against conventional field production.
+              One installation was Nigeria's first restaurant-integrated grow system fresh produce grown on-site for direct kitchen use, eliminating the supply chain between farm and plate. Water consumption was reduced by 50% against conventional field production.
             </p>
             <p className="port-venture-body port-venture-body-dark">
-              The technical knowledge from these installations did not sit in a filing cabinet. It became the foundation of the Greenhouse & Controlled Environment module in the M.A. Williams Institute's Production Systems school — making it available to every future practitioner on the platform.
+              The technical knowledge from these installations did not sit in a filing cabinet. It became the foundation of the Greenhouse & Controlled Environment module in the M.A. Williams Institute's Production Systems school making it available to every future practitioner on the platform.
             </p>
           </div>
         </div>
@@ -354,15 +354,7 @@ function VerticalFarms() {
             ))}
           </div>
 
-          <div className="port-ip-note">
-            <p className="port-ip-note-label">IP Status</p>
-            <p className="port-ip-note-body">
-              The methodologies, SOPs, and technical frameworks developed across these five installations are now held as proprietary intellectual property by M.A. Williams & Co. They are licensed through the Institute's curriculum and available for institutional deployment through the Gateway Consulting practice.
-            </p>
-            <p className="port-ip-note-body" style={{ marginTop: 10 }}>
-              Every farm built. Every crop managed. Every operational failure resolved. All of it is now teachable, licensable, and bankable.
-            </p>
-          </div>
+    
         </div>
       </div>
     </section>
@@ -384,7 +376,7 @@ function ClosingCTA() {
             <span style={{ color: "#C9A84C" }}>The gateway is open.</span>
           </h2>
           <p className="port-cta-body">
-            Whether you are a foreign business seeking structured market entry, a donor or DFI looking for a credible implementation partner, or a practitioner who wants to learn what was built here — the structure exists to serve you.
+            Whether you are a foreign business seeking structured market entry, a donor or DFI looking for a credible implementation partner, or a practitioner who wants to learn what was built here, the structure exists to serve you.
           </p>
           <div className="port-cta-btns">
             <a href="/gateway" className="pcta-btn-gold">Gateway Consulting</a>
@@ -409,7 +401,7 @@ export default function Portfolio() {
         :root {
           --deep:  #1E3622; --green: #2F5233; --mid: #3D6B42;
           --gold:  #C9A84C; --pale: #EBF2EB; --ink: #1A1A18;
-          --muted: #7A7A74; --cream: #FAF8F4; --white: #FFFFFF;
+          --muted: #1A1A18; --cream: #FAF8F4; --white: #FFFFFF;
           --fh: "M PLUS U", system-ui, sans-serif;
           --fb: "Work Sans", system-ui, sans-serif;
         }
@@ -503,7 +495,7 @@ export default function Portfolio() {
         }
         .port-hero-stat-l {
           font-size: 10px; font-weight: 500; letter-spacing: 0.07em;
-          text-transform: uppercase; color: rgba(255,255,255,0.38);
+          text-transform: uppercase; color: var(--white);
         }
 
         .port-hero-rule {
@@ -543,7 +535,7 @@ export default function Portfolio() {
           color: var(--white); margin-bottom: 5px; line-height: 1.2;
         }
         .pef-hq {
-          font-size: 11px; color: rgba(255,255,255,0.35);
+          font-size: 11px; color: var(--white);
           letter-spacing: 0.05em;
         }
 
@@ -657,7 +649,7 @@ export default function Portfolio() {
         }
         .port-venture-quote p {
           font-size: 13px; font-style: italic; line-height: 1.72;
-          color: rgba(255,255,255,0.6); margin-bottom: 6px;
+          color: var(--white); margin-bottom: 6px;
         }
         .port-venture-quote cite {
           font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
@@ -755,7 +747,7 @@ export default function Portfolio() {
         }
         .port-cta-body {
           font-size: 15px; line-height: 1.75;
-          color: rgba(255,255,255,0.5); margin-bottom: 36px; max-width: 560px;
+          color: white; margin-bottom: 36px; max-width: 560px;
         }
         .port-cta-btns { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 

@@ -7,6 +7,7 @@ import GatewayConsulting from './pages/gateway'
 import Partners from './pages/partners'
 import Portfolio from './pages/portfolio'
 import Contact from './pages/contact'
+import Loader from './components/loader'
 
 import InsightsPage from './pages/insightspage'
 import ArticlePage from './pages/articlepage'
@@ -27,6 +28,8 @@ function App() {
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/insights/:slug" element={<ArticlePage />} />
 
+        {/* Loader Page */}
+        <Route path="/loader" element={<Loader />} />
       </Routes>
     </>
   )

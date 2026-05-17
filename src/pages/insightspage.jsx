@@ -262,7 +262,7 @@ export default function InsightsPage() {
         .maw-ins-hero-sub {
           font-family: var(--fb);
           font-size: 15px; line-height: 1.8;
-          color: rgba(255,255,255,0.52);
+          color: var(--white);
           margin-bottom: 32px;
         }
 
@@ -786,25 +786,6 @@ export default function InsightsPage() {
             </div>
           </div>
         </div>
-
-        {/* ════════ FOOTER STRIP ════════ */}
-        <div className="maw-ins-footer">
-          <div className="maw-ins-footer-left">
-            <p className="maw-ins-footer-label">Explore further</p>
-            <p className="maw-ins-footer-copy">
-              The knowledge is <em>always</em> in the field.
-            </p>
-          </div>
-          <div className="maw-ins-footer-links">
-            <Link to="/institute" className="maw-ins-footer-btn-gold">
-              Explore the Institute
-            </Link>
-            <Link to="/" className="maw-ins-footer-btn-ghost">
-              Back to Home
-            </Link>
-          </div>
-        </div>
-
       </div>
     </>
   );

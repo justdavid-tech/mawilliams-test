@@ -75,14 +75,6 @@ const CONTACT_PATHS = [
 
 const OFFICES = [
   {
-    city: "London",
-    flag: "🇬🇧",
-    address: "71–75 Shelton Street\nCovent Garden\nLondon WC2H 9JQ\nUnited Kingdom",
-    role: "Registered office · International contracting · Donor interface · Gateway Consulting",
-    phone: "+44 7444 167 970",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.8295803754!2d-0.12680692326844177!3d51.51477787181676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ccbe7c0a3d%3A0x6af56ac0b8823b4a!2s71-75%20Shelton%20St%2C%20London%20WC2H%209JQ!5e0!3m2!1sen!2suk!4v1716000000000!5m2!1sen!2suk",
-  },
-  {
     city: "Lagos",
     flag: "🇳🇬",
     address: "54A Earls Court Road\nIkate, Lekki\nLagos State\nNigeria",
@@ -175,12 +167,12 @@ function Hero() {
               Gartner Callaway Group.
             </p>
             <a
-              href="https://www.gcworld.world"
+              href="https://www.gartnercallaway.com"
               target="_blank"
               rel="noopener noreferrer"
               className="ct-hero-card-link"
             >
-              gcworld.world →
+              gartnercallaway.com →
             </a>
           </div>
         </div>
@@ -466,8 +458,8 @@ function ContactForm({ selectedPath }) {
 
             <div className="ct-sidebar-item">
               <span className="ct-sidebar-item-title">Email</span>
-              <a href="mailto:yomi.williams@mawilliamsco.com" className="ct-sidebar-link">
-                yomi.williams@mawilliamsco.com
+              <a href="mailto:info@mawilliamsco.com" className="ct-sidebar-link">
+                info@mawilliamsco.com
               </a>
             </div>
 
@@ -519,9 +511,9 @@ function Offices() {
             <span className="ct-pip" aria-hidden="true" />
             <span className="ct-kicker-text">Our offices</span>
           </div>
-          <h2 className="ct-section-h" id="ct-offices-h">London · Lagos</h2>
+          <h2 className="ct-section-h" id="ct-offices-h">Lagos</h2>
           <p className="ct-section-sub">
-            Two offices. One group. UK-registered for international contracting. Lagos-based for field delivery.
+            One office in Lagos, Nigeria. One group. Lagos-based for field delivery.
           </p>
         </div>
 
@@ -585,8 +577,8 @@ function Offices() {
 
               <div className="ct-office-address-block">
                 <p className="ct-office-detail-label">Email</p>
-                <a href="mailto:yomi.williams@mawilliamsco.com" className="ct-office-phone">
-                  yomi.williams@mawilliamsco.com
+                <a href="mailto:info@mawilliamsco.com" className="ct-office-phone">
+                  info@mawilliamsco.com
                 </a>
               </div>
 
@@ -648,7 +640,7 @@ export default function Contact() {
         :root {
           --deep:  #1E3622; --green: #2F5233; --mid: #3D6B42;
           --gold:  #C9A84C; --pale: #EBF2EB; --ink: #1A1A18;
-          --muted: #7A7A74; --cream: #FAF8F4; --white: #FFFFFF;
+          --muted: #1A1A18; --cream: #FAF8F4; --white: #FFFFFF;
           --fh: "M PLUS U", system-ui, sans-serif;
           --fb: "Work Sans", system-ui, sans-serif;
         }
@@ -666,7 +658,7 @@ export default function Contact() {
 
         .ct-kicker { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; }
         .ct-pip { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; display: block; }
-        .ct-kicker-text { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--green); }
+        .ct-kicker-text { font-size: 15px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--green); }
 
         .ct-section-h {
           font-family: var(--fh); font-size: clamp(26px, 3vw, 40px);
@@ -718,7 +710,7 @@ export default function Contact() {
         }
         .ct-hero-sub {
           font-size: 14.5px; line-height: 1.78;
-          color: rgba(255,255,255,0.52); margin-bottom: 28px;
+          color: var(--white); margin-bottom: 28px;
         }
         .ct-hero-direct { display: flex; flex-direction: column; gap: 8px; }
         .ct-hero-email {

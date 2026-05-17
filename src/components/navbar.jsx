@@ -123,7 +123,7 @@ export default function Navbar() {
           font-family: var(--font-heading);
           font-weight: 600;
           font-size: 15px;
-          color: var(--white);
+          color: var(--gold);
           letter-spacing: 0.02em;
           white-space: nowrap;
         }
@@ -466,10 +466,7 @@ export default function Navbar() {
           <div className="nav-inner">
 
           {/* Logo */}
-          <Link to="/" className="nav-logo" aria-label="M.A. Williams & Co. — Home">
-            <div className="nav-logo-mark" aria-hidden="true">
-              <span>MAW</span>
-            </div>
+          <Link to="/" className="nav-logo" aria-label="M.A. Williams & Co. Home">
             <div className="nav-logo-text">
               <span className="nav-logo-name">M.A. Williams & Co.</span>
               <span className="nav-logo-sub">London · Lagos</span>

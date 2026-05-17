@@ -502,7 +502,7 @@ export default function Hero() {
           .hero-section { min-height: auto; }
 
           .hero-inner {
-            padding: 100px 16px 40px;
+            padding: 40px 16px 40px;
             gap: 28px;
           }
 

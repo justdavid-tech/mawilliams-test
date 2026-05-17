@@ -53,7 +53,7 @@ const TIERS = [
   {
     num: "Tier 1",
     name: "Market Architecture",
-    fee: "₦15,000 – ₦40,000",
+    fee: "£15,000 – £40,000",
     fee_note: "Fixed project fee",
     body: "A confidential strategic document: market mapping, entity structure recommendation, partner landscape, regulatory requirements, and a 12-month entry roadmap. Delivered personally by Yomi Williams. No junior team. No templated research.",
     details: [
@@ -409,7 +409,7 @@ function CoInvestment() {
                     <span className="ci-mech-pip" aria-hidden="true" />
                     <div>
                       <span className="ci-mech-point">{m.point}</span>
-                      <span className="ci-mech-detail"> — {m.detail}</span>
+                      <span className="ci-mech-detail">: {m.detail}</span>
                     </div>
                   </div>
                 ))}
@@ -599,7 +599,7 @@ export default function GatewayConsulting() {
           border-radius: 0 4px 4px 0;
           padding: 18px 20px; margin: 22px 0;
         }
-        .hero-quote-text { font-size: 13px; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.65); margin-bottom: 10px; }
+        .hero-quote-text { font-size: 13px; font-style: italic; line-height: 1.7; color: var(--white); margin-bottom: 10px; }
         .hero-quote-attr { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-style: normal; }
         .hero-cta-primary {
           display: inline-flex; align-items: center; gap: 10px;
@@ -630,6 +630,7 @@ export default function GatewayConsulting() {
           border: 1px solid rgba(47,82,51,0.12);
           border-radius: 6px; overflow: hidden;
         }
+        .who-section .kicker-text { color: rgba(201,168,76,0.9); font-size: 15px;}
         .who-card { background: var(--white); padding: 28px 26px; opacity: 0; transition: background 0.25s; }
         .who-card.anim-in { opacity: 1; }
         .who-card:hover { background: var(--pale); }
@@ -641,10 +642,10 @@ export default function GatewayConsulting() {
         /* ══ WHAT WE PROVIDE ══ */
         .provide-section { background: var(--deep); padding: 88px 0 80px; }
         .provide-section .section-heading { color: var(--white); }
-        .provide-section .kicker-text { color: rgba(201,168,76,0.9); }
+        .provide-section .kicker-text { color: rgba(201,168,76,0.9); font-size: 15px;}
         .provide-header { margin-bottom: 52px; }
         .provide-heading { color: var(--white) !important; }
-        .provide-sub { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.5); max-width: 600px; }
+        .provide-sub { font-size: 15px; line-height: 1.75; color: var(--white); max-width: 600px; }
         .provide-grid { display: flex; flex-direction: column; }
         .provide-item {
           display: grid; grid-template-columns: 52px 1fr;
@@ -654,9 +655,9 @@ export default function GatewayConsulting() {
         }
         .provide-item:first-of-type { border-top: 1px solid rgba(201,168,76,0.1); }
         .provide-item.anim-in { opacity: 1; }
-        .provide-num { font-family: var(--fh); font-size: 11px; font-weight: 700; letter-spacing: 0.09em; color: var(--gold); padding-top: 3px; }
+        .provide-num { font-family: var(--fh); font-size: 17px; font-weight: 700; letter-spacing: 0.09em; color: var(--gold); padding-top: 3px; }
         .provide-name { font-family: var(--fh); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.01em; }
-        .provide-body { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.5); }
+        .provide-body { font-size: 14px; line-height: 1.75; color: var(--white); }
 
         /* ══ THREE-TIER SERVICE ══ */
         .tiers-section { background: var(--cream); padding: 88px 0 80px; }
@@ -668,6 +669,7 @@ export default function GatewayConsulting() {
           border-radius: 6px; overflow: hidden;
           margin-bottom: 32px;
         }
+        .tiers-section .kicker-text { font-size: 15px; color: rgba(47,82,51,0.9); }
         .tier-btn {
           display: flex; flex-direction: column; gap: 5px;
           padding: 24px 22px; background: var(--white);
@@ -723,6 +725,7 @@ export default function GatewayConsulting() {
         .coinvest-section .section-heading { color: var(--white); }
         .coinvest-section .kicker-text { color: rgba(201,168,76,0.9); }
         .coinvest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+        .coinvest-section .kicker-text { font-size: 15px; color: rgba(47,82,51,0.9); }
         .coinvest-left { opacity: 0; }
         .coinvest-left.anim-in { opacity: 1; }
         .coinvest-right { opacity: 0; }
@@ -739,7 +742,7 @@ export default function GatewayConsulting() {
           font-family: var(--fh); font-size: 64px; font-weight: 800;
           color: rgba(201,168,76,0.2); line-height: 1;
         }
-        .ci-quote-text { font-size: 14px; font-style: italic; line-height: 1.72; color: rgba(255,255,255,0.7); margin-bottom: 12px; padding-top: 8px; position: relative; z-index: 1; }
+        .ci-quote-text { font-size: 14px; font-style: italic; line-height: 1.72; color: var(--white); margin-bottom: 12px; padding-top: 8px; position: relative; z-index: 1; }
         .ci-quote-attr { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-style: normal; }
         .ci-mech-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
         .ci-mech-list { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(201,168,76,0.18); border-radius: 6px; overflow: hidden; }
@@ -748,7 +751,7 @@ export default function GatewayConsulting() {
         .ci-mech-item:hover { background: rgba(201,168,76,0.06); }
         .ci-mech-pip { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; opacity: 0.7; }
         .ci-mech-point { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
-        .ci-mech-detail { font-size: 13px; color: rgba(255,255,255,0.45); }
+        .ci-mech-detail { font-size: 13px; color: var(--white); }
 
         /* ══ HOW TO ENGAGE ══ */
         .engage-section { background: var(--pale); padding: 88px 0 80px; }
@@ -757,6 +760,9 @@ export default function GatewayConsulting() {
         .engage-step {
           display: grid; grid-template-columns: 60px 1fr;
           gap: 0 24px; opacity: 0;
+        }
+        .engage-section .kicker-text {
+        font-size: 15px;  
         }
         .engage-step.anim-in { opacity: 1; }
         .engage-step-left { display: flex; flex-direction: column; align-items: center; }
