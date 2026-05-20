@@ -13,9 +13,8 @@ const GROUP_ENTITIES = [
   { name: "M.A. Williams & Co.", role: "The architect IP, education, international family office.", href: "/" },
   { name: "Lambert Willis Nigeria", role: "The active African arm assets, land, local investments.", href: "/portfolio" },
   { name: "Gartner Callaway Group", role: "The operator sustainability services & farm production.", href: "/portfolio" },
-  { name: "Hibiscus Estate JV", role: "200ha regenerative estate, Ogun State.", href: "/portfolio" },
-  { name: "Shaishen", role: "Group brand portfolio.", href: "/portfolio" },
-  { name: "EZ Gro Garden", role: "Group brand portfolio.", href: "/portfolio" },
+  { name: "Shaishen Foods - Hibiscus Estate JV", role: "200ha regenerative estate, Ogun State.", href: "/portfolio" },
+  { name: "EZ Gro Garden", role: "Vertical Hydroponic Partner (Africa - Europe - Middle East)", href: "/portfolio" },
 ];
 
 const INSTITUTE_LINKS = [
@@ -25,14 +24,11 @@ const INSTITUTE_LINKS = [
   { label: "Bankable Blueprints™", href: "/institute#blueprints" },
   { label: "Delivery Formats", href: "/institute#delivery" },
   { label: "Institutional Licensing", href: "/institute#licensing" },
-  { label: "Enrol Now", href: "/institute#enrol" },
+  { label: "Enrol Now", href: "/contact" },
 ];
 
 const SOCIALS = [
-  { label: "LinkedIn", abbr: "in", href: "#" },
-  { label: "X / Twitter", abbr: "tw", href: "#" },
-  { label: "YouTube", abbr: "yt", href: "#" },
-  { label: "Facebook", abbr: "fb", href: "#" },
+  { label: "Instagram", abbr: "Insta", href: "instagram.com/mawilliamsco?igsh=MTc3dXllbmpweXlvcw==" }
 ];
 
 export default function Footer() {

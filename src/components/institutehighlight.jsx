@@ -405,7 +405,7 @@ export default function InstituteHighlight() {
             </p>
             <div className="ih-cta-buttons">
               <a href="/institute" className="btn-gold">Explore the Institute</a>
-              <a href="/institute#enrol" className="btn-outline">View Courses</a>
+              <a href="/institute/courses" className="btn-outline">View Courses</a>
             </div>
           </div>
 

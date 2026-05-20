@@ -1,15 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import emailjs from '@emailjs/browser';
-
-/* ─────────────────────────────────────────
-   EMAILJS CONFIGURATION
-   Replace these with your actual EmailJS credentials
-───────────────────────────────────────── */
-const EMAILJS_CONFIG = {
-  PUBLIC_KEY: "YOUR_EMAILJS_PUBLIC_KEY",     // Get from EmailJS dashboard
-  SERVICE_ID: "YOUR_SERVICE_ID",              // e.g., "service_gmail"
-  TEMPLATE_ID: "YOUR_TEMPLATE_ID",            // e.g., "template_contact"
-};
 
 /* ─────────────────────────────────────────
    DATA
@@ -80,7 +69,7 @@ const OFFICES = [
     address: "54A Earls Court Road\nIkate, Lekki\nLagos State\nNigeria",
     role: "Commercial operations · M.A. Williams Institute HQ",
     phone: "+234 818 581 1939",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.8953487734646!2d3.4726!3d6.4389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53aec4dd92d%3A0x5e5c1d79e6e03e1c!2sIkate%2C%20Lekki%2C%20Lagos!5e0!3m2!1sen!2sng!4v1716000000001!5m2!1sen!2sng",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7299930025097!2d3.4820169739921787!3d6.428723693562356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf5c8962a936d%3A0x919ad3ed1486f6b!2s54%20Earls%20Court%20Rd%2C%20Eti-Osa%2C%20Lagos%20101245%2C%20Lagos!5e0!3m2!1sen!2sng!4v1779304757219!5m2!1sen!2sng",
   },
 ];
 
@@ -101,6 +90,80 @@ function useInView(threshold = 0.12) {
     return () => obs.disconnect();
   }, [threshold]);
   return [ref, visible];
+}
+
+/* ─────────────────────────────────────────
+   SUCCESS MODAL
+───────────────────────────────────────── */
+function SuccessModal({ name, enquiryTitle, onClose }) {
+  useEffect(() => {
+    const handler = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div className="ct-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ct-modal-title" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="ct-modal">
+        {/* Top accent bar */}
+        <div className="ct-modal-bar" aria-hidden="true" />
+
+        {/* Close button */}
+        <button className="ct-modal-close" onClick={onClose} aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        {/* Animated checkmark */}
+        <div className="ct-modal-icon-wrap" aria-hidden="true">
+          <div className="ct-modal-icon-ring" />
+          <div className="ct-modal-icon-ring ct-modal-icon-ring--2" />
+          <div className="ct-modal-icon-circle">
+            <svg className="ct-modal-check" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="ct-modal-content">
+          <p className="ct-modal-kicker">Message received</p>
+          <h2 className="ct-modal-title" id="ct-modal-title">
+            Thank you{name ? `, ${name.split(" ")[0]}` : ""}.
+          </h2>
+          <p className="ct-modal-body">
+            Your <strong>{enquiryTitle}</strong> enquiry has been submitted successfully.
+            We will review your message and be in touch within the response window for your enquiry type.
+          </p>
+
+          {/* Response window reminder */}
+          <div className="ct-modal-reminder">
+            <span className="ct-modal-reminder-dot" aria-hidden="true" />
+            <span>
+              {enquiryTitle === "Gateway Consulting" || enquiryTitle === "Explore the Institute"
+                ? "Expected response within 24 hours"
+                : "Expected response within 24 hours"}
+            </span>
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div className="ct-modal-actions">
+          <button className="ct-modal-btn-primary" onClick={onClose}>
+            Close
+          </button>
+          <a href="mailto:info@mawilliamsco.com" className="ct-modal-btn-secondary">
+            Email us directly →
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 /* ─────────────────────────────────────────
@@ -151,12 +214,7 @@ function Hero() {
             <p className="ct-hero-card-body">
               For Yomi Williams's full profile, featured work, speaking record, and media enquiries.
             </p>
-            <a
-              href="https://www.yomiwilliams.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ct-hero-card-link"
-            >
+            <a href="https://www.yomiwilliams.com" target="_blank" rel="noopener noreferrer" className="ct-hero-card-link">
               yomiwilliams.com →
             </a>
           </div>
@@ -166,12 +224,7 @@ function Hero() {
               For field delivery, agribusiness services, and operational enquiries related to
               Gartner Callaway Group.
             </p>
-            <a
-              href="https://www.gartnercallaway.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ct-hero-card-link"
-            >
+            <a href="https://www.gartnercallaway.com" target="_blank" rel="noopener noreferrer" className="ct-hero-card-link">
               gartnercallaway.com →
             </a>
           </div>
@@ -237,125 +290,95 @@ function ContactPaths({ onSelect, selected }) {
 }
 
 /* ─────────────────────────────────────────
-   SECTION 3: CONTACT FORM WITH EMAILJS
+   SECTION 3: CONTACT FORM (Formspree)
 ───────────────────────────────────────── */
 function ContactForm({ selectedPath }) {
   const [ref, vis] = useInView();
-  const [form, setForm] = useState({ 
-    name: "", 
-    org: "", 
-    email: "", 
-    phone: "", 
-    enquiry: selectedPath, 
-    message: "" 
+  const [form, setForm] = useState({
+    name: "",
+    org: "",
+    email: "",
+    phone: "",
+    enquiry: selectedPath,
+    message: "",
   });
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [submittedName, setSubmittedName] = useState("");
+  const [submittedEnquiry, setSubmittedEnquiry] = useState("");
 
   useEffect(() => {
     setForm(f => ({ ...f, enquiry: selectedPath }));
   }, [selectedPath]);
 
-  // Initialize EmailJS
-  useEffect(() => {
-    if (EMAILJS_CONFIG.PUBLIC_KEY && EMAILJS_CONFIG.PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY") {
-      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-    }
-  }, []);
-
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const getEnquiryTitle = (value) => {
-    return CONTACT_PATHS.find(p => p.value === value)?.title || "General enquiry";
-  };
+  const getEnquiryTitle = (value) =>
+    CONTACT_PATHS.find(p => p.value === value)?.title || "General Enquiry";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
 
-    // Check if EmailJS is configured
-    if (!EMAILJS_CONFIG.PUBLIC_KEY || EMAILJS_CONFIG.PUBLIC_KEY === "YOUR_EMAILJS_PUBLIC_KEY") {
-      console.warn("EmailJS not configured. Using simulation mode.");
-      // Simulation mode for testing
-      await new Promise(r => setTimeout(r, 1200));
-      setStatus("success");
-      return;
-    }
-
     try {
-      const templateParams = {
-        from_name: form.name,
-        from_email: form.email,
-        organisation: form.org || "Not specified",
-        phone: form.phone || "Not provided",
-        enquiry_type: getEnquiryTitle(form.enquiry),
-        enquiry_value: form.enquiry,
-        message: form.message,
-        to_name: "Yomi Williams",
-        reply_to: form.email,
-        submitted_at: new Date().toLocaleString('en-GB', { 
-          timeZone: 'Europe/London',
-          dateStyle: 'full',
-          timeStyle: 'medium' 
-        })
-      };
+      const response = await fetch("https://formspree.io/f/xwvzlrvl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          organisation: form.org,
+          email: form.email,
+          phone: form.phone,
+          enquiry_type: getEnquiryTitle(form.enquiry),
+          message: form.message,
+        }),
+      });
 
-      const response = await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams
-      );
-
-      if (response.status === 200) {
+      if (response.ok) {
+        setSubmittedName(form.name);
+        setSubmittedEnquiry(getEnquiryTitle(form.enquiry));
         setStatus("success");
-        // Optionally reset form
-        // setForm({ name: "", org: "", email: "", phone: "", enquiry: selectedPath, message: "" });
+        setForm({ name: "", org: "", email: "", phone: "", enquiry: selectedPath, message: "" });
       } else {
-        throw new Error("Failed to send");
+        const data = await response.json();
+        console.error("Formspree error:", data);
+        setStatus("error");
       }
     } catch (error) {
-      console.error("EmailJS error:", error);
+      console.error("Network error:", error);
       setStatus("error");
     }
   };
 
-  const pathLabel = CONTACT_PATHS.find(p => p.value === selectedPath)?.title || "General enquiry";
+  const pathLabel = getEnquiryTitle(selectedPath);
 
   return (
-    <section className="ct-form-section" ref={ref} aria-labelledby="ct-form-h">
-      <div className="ct-inner ct-form-grid">
+    <>
+      {status === "success" && (
+        <SuccessModal
+          name={submittedName}
+          enquiryTitle={submittedEnquiry}
+          onClose={() => setStatus("idle")}
+        />
+      )}
 
-        {/* Left — form */}
-        <div className={`ct-form-left ${vis ? "ct-vis-up" : ""}`}>
-          <div className="ct-kicker">
-            <span className="ct-pip" aria-hidden="true" />
-            <span className="ct-kicker-text">Send a message</span>
-          </div>
-          <h2 className="ct-section-h" id="ct-form-h">Start the conversation</h2>
-          <p className="ct-section-sub" style={{ marginBottom: 0 }}>
-            Enquiry type: <strong>{pathLabel}</strong>
-          </p>
+      <section className="ct-form-section" id="contact-form" ref={ref} aria-labelledby="ct-form-h">
+        <div className="ct-inner ct-form-grid">
 
-          {status === "success" ? (
-            <div className="ct-success" role="alert">
-              <div className="ct-success-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </div>
-              <h3 className="ct-success-title">Message received.</h3>
-              <p className="ct-success-body">
-                Thank you for reaching out. We will be in touch within the response window for your enquiry type.
-              </p>
-              <button className="ct-success-reset" onClick={() => { 
-                setStatus("idle"); 
-                setForm({ name: "", org: "", email: "", phone: "", enquiry: selectedPath, message: "" }); 
-              }}>
-                Send another message
-              </button>
+          {/* Left — form */}
+          <div className={`ct-form-left ${vis ? "ct-vis-up" : ""}`}>
+            <div className="ct-kicker">
+              <span className="ct-pip" aria-hidden="true" />
+              <span className="ct-kicker-text">Send a message</span>
             </div>
-          ) : (
-            <form className="ct-form" onSubmit={handleSubmit} noValidate>
+            <h2 className="ct-section-h" id="ct-form-h">Start the conversation</h2>
+            <p className="ct-section-sub" style={{ marginBottom: 0 }}>
+              Enquiry type: <strong>{pathLabel}</strong>
+            </p>
 
+            <form className="ct-form" onSubmit={handleSubmit} noValidate>
               <div className="ct-form-row">
                 <div className="ct-field">
                   <label className="ct-label" htmlFor="ct-name">Full name <span aria-hidden="true">*</span></label>
@@ -427,7 +450,8 @@ function ContactForm({ selectedPath }) {
 
               {status === "error" && (
                 <p className="ct-form-error" role="alert">
-                  Something went wrong. Please email us directly at yomi.williams@mawilliamsco.com
+                  Something went wrong. Please email us directly at{" "}
+                  <a href="mailto:info@mawilliamsco.com">info@mawilliamsco.com</a>
                 </p>
               )}
 
@@ -446,53 +470,54 @@ function ContactForm({ selectedPath }) {
                   <>Send message →</>
                 )}
               </button>
-
             </form>
-          )}
-        </div>
-
-        {/* Right — direct contact sidebar */}
-        <div className={`ct-form-right ${vis ? "ct-vis-right" : ""}`}>
-          <div className="ct-sidebar">
-            <p className="ct-sidebar-label">Direct contact</p>
-
-            <div className="ct-sidebar-item">
-              <span className="ct-sidebar-item-title">Email</span>
-              <a href="mailto:info@mawilliamsco.com" className="ct-sidebar-link">
-                info@mawilliamsco.com
-              </a>
-            </div>
-
-            <div className="ct-sidebar-item">
-              <span className="ct-sidebar-item-title">UK Office</span>
-              <a href="tel:+447444167970" className="ct-sidebar-link">+44 7444 167 970</a>
-            </div>
-
-            <div className="ct-sidebar-item">
-              <span className="ct-sidebar-item-title">Nigeria Office</span>
-              <a href="tel:+2348185811939" className="ct-sidebar-link">+234 818 581 1939</a>
-            </div>
-
-            <div className="ct-sidebar-divider" aria-hidden="true" />
-
-            <p className="ct-sidebar-label">Response windows</p>
-            {CONTACT_PATHS.map(p => (
-              <div key={p.value} className="ct-sidebar-response">
-                <span className="ct-sidebar-response-path">{p.title}</span>
-                <span className="ct-sidebar-response-time">{p.response}</span>
-              </div>
-            ))}
-
-            <div className="ct-sidebar-divider" aria-hidden="true" />
-
-            <p className="ct-sidebar-note">
-              Gateway Consulting enquiries are reviewed and responded to personally by Yomi Williams. Please include your company name, country of operation, and a brief description of your African market objectives.
-            </p>
           </div>
-        </div>
 
-      </div>
-    </section>
+          {/* Right — direct contact sidebar */}
+          <div className={`ct-form-right ${vis ? "ct-vis-right" : ""}`}>
+            <div className="ct-sidebar">
+              <p className="ct-sidebar-label">Direct contact</p>
+
+              <div className="ct-sidebar-item">
+                <span className="ct-sidebar-item-title">Email</span>
+                <a href="mailto:info@mawilliamsco.com" className="ct-sidebar-link">
+                  info@mawilliamsco.com
+                </a>
+              </div>
+
+              <div className="ct-sidebar-item">
+                <span className="ct-sidebar-item-title">UK Office</span>
+                <a href="tel:+447444167970" className="ct-sidebar-link">+44 7444 167 970</a>
+              </div>
+
+              <div className="ct-sidebar-item">
+                <span className="ct-sidebar-item-title">Nigeria Office</span>
+                <a href="tel:+2348185811939" className="ct-sidebar-link">+234 818 581 1939</a>
+              </div>
+
+              <div className="ct-sidebar-divider" aria-hidden="true" />
+
+              <p className="ct-sidebar-label">Response windows</p>
+              {CONTACT_PATHS.map(p => (
+                <div key={p.value} className="ct-sidebar-response">
+                  <span className="ct-sidebar-response-path">{p.title}</span>
+                  <span className="ct-sidebar-response-time">{p.response}</span>
+                </div>
+              ))}
+
+              <div className="ct-sidebar-divider" aria-hidden="true" />
+
+              <p className="ct-sidebar-note">
+                Gateway Consulting enquiries are reviewed and responded to personally by Yomi Williams.
+                Please include your company name, country of operation, and a brief description of your
+                African market objectives.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -517,7 +542,6 @@ function Offices() {
           </p>
         </div>
 
-        {/* Office toggle */}
         <div className={`ct-office-toggle ${vis ? "ct-vis-up" : ""}`} style={{ animationDelay: "0.1s" }}>
           {OFFICES.map((o, i) => (
             <button
@@ -531,7 +555,6 @@ function Offices() {
           ))}
         </div>
 
-        {/* Office panel */}
         {OFFICES.map((o, i) => (
           <div
             key={o.city}
@@ -540,7 +563,6 @@ function Offices() {
             hidden={activeOffice !== i}
             aria-label={`${o.city} office`}
           >
-            {/* Map */}
             <div className="ct-map-wrap">
               <iframe
                 title={`${o.city} office map`}
@@ -554,7 +576,6 @@ function Offices() {
               />
             </div>
 
-            {/* Details */}
             <div className="ct-office-details">
               <div className="ct-office-city-row">
                 <span className="ct-office-flag" aria-hidden="true">{o.flag}</span>
@@ -627,7 +648,7 @@ function ClosingCTA() {
 }
 
 /* ─────────────────────────────────────────
-   ROOT + STYLES (unchanged, kept from original)
+   ROOT + STYLES
 ───────────────────────────────────────── */
 export default function Contact() {
   const [selectedPath, setSelectedPath] = useState("gateway");
@@ -644,7 +665,6 @@ export default function Contact() {
           --fh: "M PLUS U", system-ui, sans-serif;
           --fb: "Work Sans", system-ui, sans-serif;
         }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .contact-page { font-family: var(--fb); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
         /* ── Animations ── */
@@ -655,19 +675,149 @@ export default function Contact() {
 
         /* ── Shared ── */
         .ct-inner { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
-
         .ct-kicker { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; }
         .ct-pip { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; display: block; }
         .ct-kicker-text { font-size: 15px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--green); }
-
         .ct-section-h {
           font-family: var(--fh); font-size: clamp(26px, 3vw, 40px);
           font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
           color: var(--ink); margin-bottom: 12px;
         }
         .ct-section-sub { font-size: 15px; line-height: 1.75; color: var(--ink); max-width: 560px; }
-
         .ct-gold { color: var(--gold); }
+
+        /* ══════════════════════
+           SUCCESS MODAL
+        ══════════════════════ */
+        .ct-modal-overlay {
+          position: fixed; inset: 0; z-index: 1000;
+          background: rgba(15, 30, 19, 0.72);
+          backdrop-filter: blur(6px);
+          display: flex; align-items: center; justify-content: center;
+          padding: 24px;
+          animation: ct-overlay-in 0.25s ease both;
+        }
+        @keyframes ct-overlay-in { from { opacity: 0; } to { opacity: 1; } }
+
+        .ct-modal {
+          position: relative;
+          background: var(--white);
+          border-radius: 8px;
+          width: 100%; max-width: 480px;
+          overflow: hidden;
+          animation: ct-modal-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+          box-shadow: 0 32px 80px rgba(15, 30, 19, 0.35), 0 8px 24px rgba(15, 30, 19, 0.15);
+        }
+        @keyframes ct-modal-in {
+          from { opacity: 0; transform: translateY(28px) scale(0.95); }
+          to   { opacity: 1; transform: none; }
+        }
+
+        .ct-modal-bar {
+          height: 4px;
+          background: linear-gradient(90deg, var(--green), var(--gold));
+        }
+
+        .ct-modal-close {
+          position: absolute; top: 16px; right: 16px;
+          width: 32px; height: 32px; border-radius: 50%;
+          background: var(--pale); border: none; cursor: pointer;
+          display: flex; align-items: center; justify-content: center;
+          color: var(--ink); transition: background 0.2s, color 0.2s;
+        }
+        .ct-modal-close:hover { background: var(--deep); color: var(--white); }
+
+        .ct-modal-icon-wrap {
+          display: flex; align-items: center; justify-content: center;
+          padding: 36px 0 24px; position: relative;
+        }
+        .ct-modal-icon-ring {
+          position: absolute;
+          border-radius: 50%;
+          border: 1px solid rgba(47, 82, 51, 0.12);
+          width: 80px; height: 80px;
+          animation: ct-ring-pulse 2s ease-in-out infinite;
+        }
+        .ct-modal-icon-ring--2 {
+          width: 104px; height: 104px;
+          animation-delay: 0.3s;
+          border-color: rgba(47, 82, 51, 0.07);
+        }
+        @keyframes ct-ring-pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50%       { transform: scale(1.08); opacity: 0.6; }
+        }
+        .ct-modal-icon-circle {
+          width: 64px; height: 64px; border-radius: 50%;
+          background: var(--pale);
+          border: 2px solid rgba(47, 82, 51, 0.15);
+          display: flex; align-items: center; justify-content: center;
+          color: var(--green); position: relative; z-index: 1;
+        }
+        .ct-modal-check {
+          animation: ct-check-draw 0.5s ease 0.2s both;
+          stroke-dasharray: 40;
+          stroke-dashoffset: 40;
+        }
+        @keyframes ct-check-draw {
+          to { stroke-dashoffset: 0; }
+        }
+
+        .ct-modal-content {
+          padding: 0 32px 24px;
+          text-align: center;
+        }
+        .ct-modal-kicker {
+          font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+          text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+        }
+        .ct-modal-title {
+          font-family: var(--fh); font-size: 26px; font-weight: 800;
+          color: var(--ink); letter-spacing: -0.02em; margin-bottom: 12px;
+          line-height: 1.15;
+        }
+        .ct-modal-body {
+          font-size: 14px; line-height: 1.75; color: #4a4a46;
+          margin-bottom: 16px;
+        }
+        .ct-modal-body strong { color: var(--ink); font-weight: 600; }
+
+        .ct-modal-reminder {
+          display: inline-flex; align-items: center; gap: 7px;
+          background: var(--pale); border: 1px solid rgba(47,82,51,0.12);
+          border-radius: 20px; padding: 7px 14px;
+          font-size: 12px; font-weight: 500; color: var(--green);
+        }
+        .ct-modal-reminder-dot {
+          width: 6px; height: 6px; border-radius: 50%;
+          background: var(--green); flex-shrink: 0; display: block;
+          animation: ct-dot-blink 1.8s ease-in-out infinite;
+        }
+        @keyframes ct-dot-blink {
+          0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+        }
+
+        .ct-modal-actions {
+          display: flex; align-items: center; gap: 10px;
+          padding: 20px 32px 28px;
+          border-top: 1px solid rgba(47,82,51,0.08);
+        }
+        .ct-modal-btn-primary {
+          flex: 1;
+          font-family: var(--fb); font-size: 13px; font-weight: 700;
+          letter-spacing: 0.06em; text-transform: uppercase;
+          color: var(--white); background: var(--green);
+          border: none; padding: 13px 20px; border-radius: 4px;
+          cursor: pointer; transition: background 0.2s, transform 0.15s;
+        }
+        .ct-modal-btn-primary:hover { background: var(--deep); transform: translateY(-1px); }
+        .ct-modal-btn-secondary {
+          font-size: 12px; font-weight: 600; color: var(--green);
+          text-decoration: none; white-space: nowrap;
+          border-bottom: 1px solid rgba(47,82,51,0.25); padding-bottom: 1px;
+          transition: color 0.2s, border-color 0.2s;
+        }
+        .ct-modal-btn-secondary:hover { color: var(--deep); border-color: var(--deep); }
 
         /* ══════════════════════
            HERO
@@ -859,8 +1009,9 @@ export default function Contact() {
         .ct-form-error {
           font-size: 13px; color: #c0392b; background: #fdf0ed;
           border: 1px solid rgba(192,57,43,0.2); border-radius: 3px;
-          padding: 12px 14px;
+          padding: 12px 14px; line-height: 1.6;
         }
+        .ct-form-error a { color: #c0392b; font-weight: 600; }
 
         .ct-submit {
           font-family: var(--fb); font-size: 13px; font-weight: 700;
@@ -881,33 +1032,6 @@ export default function Contact() {
           animation: ct-spin 0.7s linear infinite; flex-shrink: 0;
         }
         @keyframes ct-spin { to { transform: rotate(360deg); } }
-
-        /* Success */
-        .ct-success {
-          margin-top: 28px; background: var(--white);
-          border: 1px solid rgba(47,82,51,0.15);
-          border-left: 3px solid var(--green);
-          border-radius: 4px; padding: 32px 28px;
-          display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
-        }
-        .ct-success-icon {
-          width: 44px; height: 44px; border-radius: 50%;
-          background: var(--pale-green, var(--pale));
-          display: flex; align-items: center; justify-content: center;
-          color: var(--green);
-        }
-        .ct-success-title {
-          font-family: var(--fh); font-size: 20px; font-weight: 700; color: var(--ink);
-        }
-        .ct-success-body { font-size: 14px; line-height: 1.72; color: var(--ink); }
-        .ct-success-reset {
-          font-family: var(--fb); font-size: 12px; font-weight: 600;
-          letter-spacing: 0.06em; text-transform: uppercase;
-          color: var(--green); background: none; border: none; cursor: pointer;
-          border-bottom: 1px solid rgba(47,82,51,0.3); padding-bottom: 2px; margin-top: 6px;
-          transition: color 0.2s;
-        }
-        .ct-success-reset:hover { color: var(--deep); }
 
         /* Sidebar */
         .ct-sidebar {
@@ -1084,10 +1208,14 @@ export default function Contact() {
           .ct-form-row { grid-template-columns: 1fr; }
           .ct-paths-grid { grid-template-columns: 1fr; }
           .ct-submit { width: 100%; justify-content: center; }
+          .ct-modal-actions { flex-direction: column; }
+          .ct-modal-btn-primary { width: 100%; text-align: center; }
         }
         @media (max-width: 480px) {
           .ct-cta-btns { flex-direction: column; align-items: stretch; }
           .ct-btn-gold, .ct-btn-green, .ct-btn-ghost { text-align: center; }
+          .ct-modal-content { padding: 0 20px 20px; }
+          .ct-modal-actions { padding: 16px 20px 24px; }
         }
       `}</style>
 

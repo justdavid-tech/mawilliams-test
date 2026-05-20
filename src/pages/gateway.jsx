@@ -194,13 +194,13 @@ function Hero() {
           </blockquote>
 
           <div style={{ display: "flex", gap: 12, marginTop: 28, flexWrap: "wrap" }}>
-            <a href="/gateway/consult" className="hero-cta-primary"
+            <a href="/contact" className="hero-cta-primary"
               onMouseEnter={e => { e.currentTarget.style.background = "#d9b85c"; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "var(--gold)"; e.currentTarget.style.transform = "none"; }}>
               Request a Consultation
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </a>
-            <a href="/gateway/tiers" className="hero-cta-ghost"
+            <a href="#tiers" className="hero-cta-ghost"
               onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)"; e.currentTarget.style.color = "#fff"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)"; e.currentTarget.style.color = "rgba(255,255,255,0.65)"; }}>
               View Service Tiers
@@ -302,7 +302,7 @@ function ThreeTierService() {
   const [activeTier, setActiveTier] = useState(0);
 
   return (
-    <section className="tiers-section" ref={ref} aria-labelledby="tiers-heading">
+    <section className="tiers-section" ref={ref} aria-labelledby="tiers-heading" id="tiers">
       <div className="section-inner">
         <div className={`tiers-header ${visible ? "anim-in" : ""}`}>
           <Kicker label="Service architecture" />
@@ -488,8 +488,14 @@ function ClosingCTA() {
           </p>
           <div className="cta-buttons">
             <a href="/gateway/consult" className="cta-btn-primary">Request a Consultation</a>
-            <a href="/gateway/statement" className="cta-btn-secondary">Download Capability Statement</a>
-            <a href="/contact" className="cta-btn-ghost">Contact Yomi Directly</a>
+           <a
+  href="https://wa.me/2348185811939"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="cta-btn-ghost"
+>
+  Contact Yomi Directly
+</a>
           </div>
         </div>
       </div>
@@ -520,7 +526,6 @@ export default function GatewayConsulting() {
           --fb:    "Work Sans", system-ui, sans-serif;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .gw-page { font-family: var(--fb); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
         .anim-in       { animation: fadeUp   0.65s ease both; }

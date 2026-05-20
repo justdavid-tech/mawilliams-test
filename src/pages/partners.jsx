@@ -376,13 +376,12 @@ function PartnerCTA() {
             Submit a partnership enquiry, request our capability statement, or schedule a call with Yomi Williams directly. We respond to all partner enquiries within five working days.
           </p>
           <div className="pt-cta-btns">
-            <a href="/contact?enquiry=partnership" className="pt-btn-gold">
+            <a href="/contact" className="pt-btn-gold">
               Submit a Partnership Enquiry
             </a>
-            <a href="/contact?enquiry=partnership#capability" className="pt-btn-green">
-              Request Capability Statement
-            </a>
-            <a href="/contact?enquiry=general" className="pt-btn-ghost">
+            <a href="https://wa.me/2348185811939"
+  target="_blank"
+  rel="noopener noreferrer" className="pt-btn-ghost">
               Schedule a Call
             </a>
           </div>
@@ -408,7 +407,6 @@ export default function PartnersPage() {
           --fh: "M PLUS U", system-ui, sans-serif;
           --fb: "Work Sans", system-ui, sans-serif;
         }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .partners-page { font-family: var(--fb); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
         /* ── Animations ── */

@@ -38,10 +38,10 @@ const GROUP_ENTITIES = [
     accent: "#2F5233",
   },
   {
-    id: "shaishen",
+    id: "Shaishen Foods - Hibiscus Estate JV",
     num: "04",
     role: "The Consumer Brand",
-    name: "Shaishen",
+    name: "Shaishen Foods - Hibiscus Estate JV",
     hq: "Nigeria · UK",
     type: "Agricultural Brand",
     desc: "The consumer-facing brand for the group's premium agricultural products, including hibiscus calyces, cold-pressed seed oil, and processed produce destined for UK and EU markets.",
@@ -71,7 +71,7 @@ const HIBISCUS_SPECS = [
   { label: "Energy", value: "Solar infrastructure" },
   { label: "Primary product", value: "Dried hibiscus calyces" },
   { label: "Secondary product", value: "Cold-pressed hibiscus seed oil" },
-  { label: "Consumer brand", value: "Shaishen Foods" },
+  { label: "Consumer brand", value: "Shaishen Foods - Hibiscus Estate JV" },
   { label: "Export markets", value: "United Kingdom, European Union" },
 ];
 
@@ -406,7 +406,6 @@ export default function Portfolio() {
           --fb: "Work Sans", system-ui, sans-serif;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .portfolio-page { font-family: var(--fb); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
         /* ── ANIMATIONS ── */

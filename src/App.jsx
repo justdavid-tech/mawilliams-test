@@ -8,6 +8,7 @@ import Partners from './pages/partners'
 import Portfolio from './pages/portfolio'
 import Contact from './pages/contact'
 import Loader from './components/loader'
+import Courses from './components/courses'
 
 import InsightsPage from './pages/insightspage'
 import ArticlePage from './pages/articlepage'
@@ -30,6 +31,9 @@ function App() {
 
         {/* Loader Page */}
         <Route path="/loader" element={<Loader />} />
+
+        {/* Courses Page */}
+        <Route path="/institute/courses" element={<Courses />} />
       </Routes>
     </>
   )

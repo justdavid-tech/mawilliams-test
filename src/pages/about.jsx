@@ -50,7 +50,7 @@ const GROUP = [
     tag: "Nigeria",
   },
   {
-    name: "Hibiscus Estate JV",
+    name: "Shaishen - Hibiscus Estate JV",
     role: "The proof.",
     desc: "A joint-venture 200-hectare regenerative hibiscus estate in Ogun State, a living demonstration of every methodology the group teaches and deploys.",
     tag: "Ogun State",
@@ -159,7 +159,7 @@ function Hero() {
           <p className="hero-body">
             We hold the trademarks, methodologies, and educational frameworks that the operating entities in our group are built upon. We manage a portfolio of international investments. We provide high-level strategic advisory to foreign businesses entering Africa.
           </p>
-          <a href="/gateway" className="hero-cta" style={{
+          <a href="/contact" className="hero-cta" style={{
             display: 'inline-flex', alignItems: 'center', gap: 10, marginTop: 28,
             fontFamily: 'var(--fb)', fontSize: 12, fontWeight: 700,
             letterSpacing: '0.09em', textTransform: 'uppercase',
@@ -448,7 +448,6 @@ export default function About() {
         }
 
         /* ── RESET ── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .about-page { font-family: var(--fb); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
         /* ── ANIMATIONS ── */
@@ -714,7 +713,7 @@ export default function About() {
         }
         .investor-note-body {
           font-size: 13px; line-height: 1.72;
-          color: rgba(255,255,255,0.5);
+          color: var(--white);
         }
 
         /* ════════════════════════════════════

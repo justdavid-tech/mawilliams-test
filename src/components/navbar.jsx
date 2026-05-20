@@ -405,7 +405,7 @@ export default function Navbar() {
           margin-top: 16px;
           font-family: var(--font-body);
           font-size: 11px;
-          color: rgba(255,255,255,0.35);
+          color: var(--white);
           letter-spacing: 0.06em;
           text-align: center;
           font-style: italic;
@@ -493,8 +493,8 @@ export default function Navbar() {
 
           {/* CTA + Hamburger */}
           <div className="nav-cta">
-            <Link to="/gateway" className="btn-consult" aria-label="Request a consultation">
-              Consult
+            <Link to="/contact#contact-form" className="btn-consult" aria-label="Request a consultation">
+              Book Consultation
             </Link>
             <button
               className={`nav-hamburger ${menuOpen ? "open" : ""}`}
@@ -558,8 +558,8 @@ export default function Navbar() {
         </ul>
 
         <div className="drawer-footer">
-          <Link to="/gateway" className="drawer-cta" onClick={() => setMenuOpen(false)}>
-            Request a Consultation
+          <Link to="/contact#contact-form" className="drawer-cta" onClick={() => setMenuOpen(false)}>
+            Book Consultation
           </Link>
           <p className="drawer-tagline">Intellectual Architecture. Global Reach.</p>
         </div>

@@ -283,7 +283,7 @@ function PhysicalAdvantage() {
   const [ref, visible] = useInView();
 
   return (
-    <section className="advantage-section" ref={ref} aria-labelledby="advantage-heading">
+    <section className="advantage-section" ref={ref} aria-labelledby="advantage-heading" id="physical-advantage">
       <div className="section-inner">
         <div className={`advantage-header ${visible ? "anim-in" : ""}`}>
           <Kicker label="Our core differentiator" />
@@ -331,7 +331,7 @@ function BankableBlueprints() {
   ];
 
   return (
-    <section className="blueprints-section" ref={ref} aria-labelledby="blueprints-heading">
+    <section className="blueprints-section" ref={ref} aria-labelledby="blueprints-heading" id="blueprints">
       <div className="section-inner">
         <div className="blueprints-grid">
           <div className={`blueprints-left ${visible ? "anim-in" : ""}`}>
@@ -373,7 +373,7 @@ function FourSchools() {
   const [activeSchool, setActiveSchool] = useState(0);
 
   return (
-    <section className="schools-section" ref={ref} aria-labelledby="schools-heading">
+    <section className="schools-section" ref={ref} aria-labelledby="schools-heading" id="schools">
       <div className="section-inner">
         <div className={`schools-header ${visible ? "anim-in" : ""}`}>
           <Kicker label="Curriculum architecture" />
@@ -435,7 +435,7 @@ function DeliveryFormats() {
   const [ref, visible] = useInView();
 
   return (
-    <section className="formats-section" ref={ref} aria-labelledby="formats-heading">
+    <section className="formats-section" ref={ref} aria-labelledby="formats-heading" id="delivery">
       <div className="section-inner">
         <div className={`formats-header ${visible ? "anim-in" : ""}`}>
           <Kicker label="How we deliver" />
@@ -468,7 +468,7 @@ function InstitutionalLicensing() {
   const [ref, visible] = useInView();
 
   return (
-    <section className="licensing-section" ref={ref} aria-labelledby="licensing-heading">
+    <section className="licensing-section" ref={ref} aria-labelledby="licensing-heading" id="licensing">
       <div className="section-inner">
         <div className={`licensing-header ${visible ? "anim-in" : ""}`}>
           <Kicker label="For organisations" light />
@@ -549,9 +549,8 @@ function ClosingCTA() {
             The farm is ready.<br />The question is yours.
           </h2>
           <div className="cta-buttons">
-            <a href="/institute/enrol" className="cta-btn-primary">Enrol Now</a>
-            <a href="/institute/courses" className="cta-btn-secondary">View Courses</a>
-            <a href="/institute/institutional" className="cta-btn-ghost">Institutional Enquiry</a>
+            <a href="/institute/courses" className="cta-btn-primary">Explore Courses</a>
+            <a href="/contact" className="cta-btn-ghost">Institutional Enquiry</a>
           </div>
         </div>
       </div>
@@ -582,7 +581,6 @@ export default function Institute() {
           --fb:    "Work Sans", system-ui, sans-serif;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .inst-page { font-family: var(--fb); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
         .anim-in       { animation: fadeUp   0.65s ease both; }
@@ -837,11 +835,7 @@ export default function Institute() {
 
         /* ══ INSTITUTIONAL LICENSING ══ */
         .licensing-section { background: var(--green); padding: 88px 0 80px; position: relative; overflow: hidden; }
-        .licensing-section::before {
-          content: ''; position: absolute; inset: 0;
-          background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-          background-size: 48px 48px; pointer-events: none;
-        }
+        
         .licensing-section .section-heading { color: var(--white); }
         .licensing-section .kicker-text { color: rgba(201,168,76,0.9); }
         .licensing-header { margin-bottom: 48px; position: relative; z-index: 1; }

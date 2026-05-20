@@ -119,18 +119,7 @@ export default function FiveFunctions() {
           font-family: var(--font-body);
         }
 
-        .ff-section::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-          background-size: 50px 50px;
-          mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-          pointer-events: none;
-        }
-
+ 
         .ff-inner {
           position: relative;
           z-index: 2;
