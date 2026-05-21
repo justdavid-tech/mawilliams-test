@@ -87,7 +87,7 @@ export default function QuoteSection() {
       <section className="quote-centered">
         <div className="quote-centered-inner">
           <p className="quote-centered-text">
-         I am not building businesses. I am building a structure where knowledge is protected, land is secured, and impact is delivered in that order because that sequence determines whether what we build lasts a decade or a century.
+         I am not building businesses. I am building a structure where knowledge is protected, land is secured, and impact is delivered in that order because that sequence determines whether what we build lasts a decade.
           </p>
           <p className="quote-centered-attribution">Yomi Williams</p>
           <p className="quote-centered-context">On Legacy & Architecture</p>

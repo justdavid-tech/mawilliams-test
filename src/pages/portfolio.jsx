@@ -44,7 +44,7 @@ const GROUP_ENTITIES = [
     name: "Shaishen Foods - Hibiscus Estate JV",
     hq: "Nigeria · UK",
     type: "Agricultural Brand",
-    desc: "The consumer-facing brand for the group's premium agricultural products, including hibiscus calyces, cold-pressed seed oil, and processed produce destined for UK and EU markets.",
+    desc: "Joint Venture Partnership involving the production of roselle hibiscus, drying of clayces, cold pressed seed oil and processed produce destined for International markets",
     pillars: ["Hibiscus Products", "Cold-Pressed Oils", "UK & EU Export", "Premium Positioning"],
     accent: "#C9A84C",
   },
@@ -55,8 +55,8 @@ const GROUP_ENTITIES = [
     name: "EZ Gro Garden",
     hq: "Nigeria",
     type: "Agricultural Brand",
-    desc: "The group's entry-level agricultural brand, making quality growing inputs, guidance, and practice accessible to smallholder farmers, homesteaders, and urban growers across Nigeria.",
-    pillars: ["Smallholder Focus", "Urban Growing", "Input Accessibility", "Nigeria-Wide"],
+    desc: "Our Vertical Hydroponics Partner based in Houston Texas, USA. M. A. Williams & Co holds the distributorship rights for Africa, Europe and The Middle East.",
+    pillars: ["Vertical Farming", "Hydroponics", "Urban Farming", "Commercial Systems"],
     accent: "#3D6B42",
   },
 ];
@@ -148,7 +148,7 @@ function Hero() {
             The M.A. Williams Group is not a collection of separate businesses. It is a single ecosystem deliberately designed so that each entity reinforces every other. The IP lives at the top. The assets are held in Africa. The services are delivered through the operator. The knowledge is exported through the Institute.
           </p>
           <p className="port-hero-body">
-            What you see in this portfolio is not a list of projects. It is the architecture of a generational institution built over three decades, stress-tested in the field, and structured to outlast any single venture.
+            What you see in this portfolio is not a list of projects. It is the architecture of a generational institution built over a decade, stress-tested in the field, and structured to outlast any single venture.
           </p>
           <div className="port-hero-stats">
             {[

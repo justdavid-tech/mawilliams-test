@@ -134,7 +134,7 @@ function Hero() {
 
         <div className={`pt-hero-right ${vis ? "pt-vis-right" : ""}`}>
           <p className="pt-hero-body">
-            M.A. Williams & Co. Ltd is a UK-registered entity with a documented operational record spanning more than three decades of frontline agricultural development across Nigeria and West Africa.
+            M.A. Williams & Co. Ltd is a UK-registered entity with a documented operational record spanning over a decade of frontline agricultural development across Nigeria and West Africa.
           </p>
           <p className="pt-hero-body">
             We are structured, governed, and positioned to serve as the primary counterparty for international donors, development finance institutions, and global programme partners seeking credible, accountable implementation capacity in the African agri-food system.

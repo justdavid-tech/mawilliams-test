@@ -361,7 +361,7 @@ export default function Hero() {
         /* Rotating stamp */
         .stamp {
           position: absolute;
-          bottom: 88px;
+          bottom: 98px;
           left: -12px;
           width: 104px; height: 104px;
           z-index: 10;
@@ -508,7 +508,7 @@ export default function Hero() {
             <p className={`hero-body ${visible ? "in" : ""}`}>
               M.A. Williams & Co. is the international family office, IP repository,
               and global contracting arm of the Yomi Williams Group, a purposefully
-              structured ecosystem built on three decades of frontline agribusiness
+              structured ecosystem built over a decade of frontline agribusiness
               experience across Nigeria and the United Kingdom.
             </p>
  
@@ -582,9 +582,6 @@ export default function Hero() {
                 </div>
               </div>
             </div>
- 
-            <span className="plus-mark" style={{ bottom: "44px", right: "16px" }}>✦</span>
-            <span className="plus-mark" style={{ top: "130px", right: "8px", fontSize: 14, animationDelay: "0.5s" }}>+</span>
           </div>
         </div>
       </section>

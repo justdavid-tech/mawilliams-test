@@ -14,6 +14,8 @@ import InsightsPage from './pages/insightspage'
 import ArticlePage from './pages/articlepage'
 import VideosPage from './pages/media'
 
+import TermsOfUse from './pages/termsofuse'
+import Privacy from './pages/privacy'
 function App() {
   return (
     <>
@@ -39,6 +41,8 @@ function App() {
         {/* Media */}
         <Route path="/media" element={<VideosPage />} />
 
+        <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </>
   )

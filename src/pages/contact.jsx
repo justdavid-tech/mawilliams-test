@@ -64,12 +64,12 @@ const CONTACT_PATHS = [
 
 const OFFICES = [
   {
-    city: "Lagos",
-    flag: "🇳🇬",
-    address: "54A Earls Court Road\nIkate, Lekki\nLagos State\nNigeria",
+    city: "London",
+    flag: "UK",
+    address: "71-75 Shelton Street, convent Garden, London WC2H 9JQ",
     role: "Commercial operations · M.A. Williams Institute HQ",
-    phone: "+234 818 581 1939",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7299930025097!2d3.4820169739921787!3d6.428723693562356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf5c8962a936d%3A0x919ad3ed1486f6b!2s54%20Earls%20Court%20Rd%2C%20Eti-Osa%2C%20Lagos%20101245%2C%20Lagos!5e0!3m2!1sen!2sng!4v1779304757219!5m2!1sen!2sng",
+    phone: ["+44 7444 167 970", "+234 818 581 1939"],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9160537426333!2d-0.12614482400570987!3d51.51475607181499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876058c7c9527fb%3A0x79bc7464573598c1!2s71-75%20Shelton%20St%2C%20London%20WC2H%209JQ%2C%20UK!5e0!3m2!1sen!2sng!4v1779373313520!5m2!1sen!2sng",
   },
 ];
 
@@ -197,8 +197,8 @@ function Hero() {
             and institutional partners operating across West Africa and the global agri-food system.
           </p>
           <div className="ct-hero-direct">
-            <a href="mailto:yomi.williams@mawilliamsco.com" className="ct-hero-email">
-              yomi.williams@mawilliamsco.com
+            <a href="mailto:info@mawilliamsco.com" className="ct-hero-email">
+              info@mawilliamsco.com
             </a>
             <div className="ct-hero-phones">
               <a href="tel:+447444167970" className="ct-hero-phone">+44 7444 167 970 (UK)</a>
@@ -589,12 +589,20 @@ function Offices() {
                 <p className="ct-office-address">{o.address}</p>
               </div>
 
-              <div className="ct-office-address-block">
-                <p className="ct-office-detail-label">Phone</p>
-                <a href={`tel:${o.phone.replace(/\s/g, "")}`} className="ct-office-phone">
-                  {o.phone}
-                </a>
-              </div>
+          <div className="ct-office-address-block">
+  <p className="ct-office-detail-label">Phone</p>
+  <div className="flex flex-col gap-1"> {/* Flex container to stack multiple numbers */}
+    {o.phone.map((number, index) => (
+      <a 
+        key={index} 
+        href={`tel:${number.replace(/\s/g, "")}`} 
+        className="ct-office-phone block"
+      >
+        {number}
+      </a>
+    ))}
+  </div>
+</div>
 
               <div className="ct-office-address-block">
                 <p className="ct-office-detail-label">Email</p>

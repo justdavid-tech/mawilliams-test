@@ -62,7 +62,7 @@ const SCHOOLS = [
 const ADVANTAGE = [
   {
     name: "Digital Depth",
-    body: "Every course is delivered via high-fidelity video, downloadable PDF guides for deep study, and audio formats for mobile learning, structured for the busy professional, not the full-time student.",
+    body: "Every course is delivered via high-fidelity audio, downloadable PDF guides for deep study, and audio formats for mobile learning, structured for the busy professional, not the full-time student.",
   },
   {
     name: "Physical Validation",

@@ -293,13 +293,13 @@ function Founder() {
             </p>
 
             <p className="founder-body">
-              M.A. Williams & Co. is the institutional expression of the work of Yomi Williams, three decades of frontline agricultural development built, tested, refined, and made bankable.
+              M.A. Williams & Co. is the institutional expression of the work of Yomi Williams, over a decade of frontline agricultural development built, tested, refined, and made bankable.
             </p>
             <p className="founder-body">
               Yomi pioneered Africa's first automated hydroponic urban vertical farms. He designed and built a 200-hectare regenerative agroforestry estate in Ogun State integrating pivot irrigation, precision CropX sensing, and solar infrastructure. He has trained over 1,000 youths, women, and military personnel and advised more than 30 organisations including Union Bank Plc, the Nigerian Armed Forces Resettlement Centre, and the NBCC.
             </p>
             <p className="founder-body">
-              The intellectual work that M.A. Williams & Co. holds is not theoretical. It was built in the field, tested under pressure, and refined over more than three decades of frontline agricultural development.
+              The intellectual work that M.A. Williams & Co. holds is not theoretical. It was built in the field, tested under pressure, and refined over a decade of frontline agricultural development.
             </p>
 
             <a
@@ -330,7 +330,7 @@ function Founder() {
             {/* Pull quote */}
             <blockquote className="founder-quote">
               <p className="founder-quote-text">
-                "I am not building businesses. I am building a structure where knowledge is protected, land is secured, and impact is delivered in that order because that sequence determines whether what we build lasts a decade or a century."
+                "I am not building businesses. I am building a structure where knowledge is protected, land is secured, and impact is delivered in that order because that sequence determines whether what we build lasts a decade."
               </p>
               <cite className="founder-quote-attr">— Yomi Williams</cite>
             </blockquote>

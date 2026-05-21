@@ -656,7 +656,7 @@ export default function InsightsPage() {
             <div className="maw-ins-hero-right">
               <p className="maw-ins-hero-sub">
                 Regenerative agriculture insights, precision farming intelligence, institutional
-                perspectives, and case studies from three decades of frontline practice —
+                perspectives, and case studies from over a decade of frontline practice —
                 published by M.A. Williams & Co.
               </p>
               <div className="maw-ins-hero-badge">

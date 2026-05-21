@@ -37,7 +37,7 @@ const DIFFERENTIATORS = [
   },
   {
     name: "Active institutional network",
-    body: "Relationships with Nigerian legal counsel, tax advisors, regulatory specialists, government agencies, institutional banks, and international donors built over three decades not assembled for an engagement.",
+    body: "Relationships with Nigerian legal counsel, tax advisors, regulatory specialists, government agencies, institutional banks, and international donors built over a decade not assembled for an engagement.",
   },
   {
     name: "A functioning group as proof",
@@ -53,7 +53,7 @@ const TIERS = [
   {
     num: "Tier 1",
     name: "Market Architecture",
-    fee: "£15,000 – £40,000",
+    fee: "$100,000+",
     fee_note: "Fixed project fee",
     body: "A confidential strategic document: market mapping, entity structure recommendation, partner landscape, regulatory requirements, and a 12-month entry roadmap. Delivered personally by Yomi Williams. No junior team. No templated research.",
     details: [
@@ -68,7 +68,7 @@ const TIERS = [
   {
     num: "Tier 2",
     name: "Entry Structuring",
-    fee: "£40,000 – £120,000",
+    fee: "$100,000+",
     fee_note: "Per engagement",
     body: "Everything in Tier 1, delivered first. Then active involvement: introductions to M.A. Williams' legal and advisory network, facilitation of partner conversations, governance design, attendance at key structuring meetings in Nigeria or London. M.A. Williams reserves co-investment rights on every Tier 2 engagement.",
     details: [
@@ -83,7 +83,7 @@ const TIERS = [
   {
     num: "Tier 3",
     name: "Strategic Partnership",
-    fee: "£5,000 – £15,000/month",
+    fee: "$10,000 - $15,000/month",
     fee_note: "+ equity option",
     body: "A formal, ongoing advisory relationship. M.A. Williams holds a named role, strategic advisor, board observer, or non-executive director, on the client's African venture. Monthly retainer plus equity option. Not a retainer for occasional calls.",
     details: [
@@ -183,7 +183,7 @@ function Hero() {
             M.A. Williams & Co. Gateway Consulting provides high-level strategic advisory to foreign businesses seeking structured, credible entry into African markets. We work with European, North American, and Asian companies that have capital, board-level intent, and a genuine mandate to operate in Nigeria and West Africa.
           </p>
           <p className="hero-body">
-            This is not market research. This is not a desk-based report. It is practitioner intelligence applied to a specific client's entry challenge by someone who has structured a multi-entity group, held land under Nigerian law, contracted with international donors, and operated commercially in the Lagos and Ogun State markets for three decades.
+            This is not market research. This is not a desk-based report. It is practitioner intelligence applied to a specific client's entry challenge by someone who has structured a multi-entity group, held land under Nigerian law, contracted with international donors, and operated commercially in the Lagos and Ogun State markets for over a decade.
           </p>
 
           <blockquote className="hero-quote">
@@ -556,7 +556,7 @@ export default function GatewayConsulting() {
         }
         .hero-bg-img {
           position: absolute; inset: 0;
-          background-image: url('/assets/hero-image (2).jpg');
+          background-image: url('/assets/hero-image (3).jpg');
           background-size: cover; background-position: center 35%;
           opacity: 0.15; transform: scale(1.04);
           transition: transform 8s ease; z-index: 0;

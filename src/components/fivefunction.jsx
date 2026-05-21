@@ -43,7 +43,7 @@ const FUNCTIONS = [
     num: "03",
     icon: Globe2,
     title: "Gateway Consulting",
-    body: "We provide high-level strategic advisory to foreign businesses seeking structured, credible entry into African markets. Three decades of operational experience, an active institutional network, and a multi-entity group structure built and stress-tested in Nigeria give M.A. Williams a perspective that no management consultancy, law firm, or development agency can replicate. Where conviction aligns, we invest alongside our clients.",
+    body: "We provide high-level strategic advisory to foreign businesses seeking structured, credible entry into African markets. Over a decade of operational experience, an active institutional network, and a multi-entity group structure built and stress-tested in Nigeria give M.A. Williams a perspective that no management consultancy, law firm, or development agency can replicate. Where conviction aligns, we invest alongside our clients.",
     tags: [
       "Market entry structuring",
       "Strategic advisory",
@@ -82,7 +82,7 @@ const FUNCTIONS = [
       "Hibiscus Estate JV",
     ],
     quote: {
-      text: "I am not building businesses. I am building a structure where knowledge is protected, land is secured, and impact is delivered in that order because that sequence determines whether what we build lasts a decade or a century.",
+      text: "I am not building businesses. I am building a structure where knowledge is protected, land is secured, and impact is delivered in that order because that sequence determines whether what we build lasts a decade.",
       attr: "Yomi Williams",
     },
     cta: null,
