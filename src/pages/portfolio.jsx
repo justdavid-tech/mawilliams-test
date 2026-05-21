@@ -19,7 +19,7 @@ const GROUP_ENTITIES = [
     id: "lw",
     num: "02",
     role: "The Active African Arm",
-    name: "Lambert Willis Nigeria",
+    name: "Lambert Willis",
     hq: "Lagos, Nigeria",
     type: "African Family Office",
     desc: "Holds Nigerian land, property, and local investments. Acts as M.A. Williams' proxy in every African venture, providing local shareholding, directorship, and full representation under Nigerian law.",

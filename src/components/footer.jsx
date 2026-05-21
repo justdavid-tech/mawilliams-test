@@ -350,8 +350,7 @@ export default function Footer() {
             <a href="/" className="footer-logo" aria-label="M.A. Williams & Co. home">
               <div className="logo-mark" aria-hidden="true"><span>MAW</span></div>
               <div className="logo-text-col">
-                <span className="logo-name">M.A. Williams & Co.</span>
-                <span className="logo-sub">London · Lagos</span>
+                <span className="logo-name">M.A. WILLIAMS & CO.</span>
               </div>
             </a>
 

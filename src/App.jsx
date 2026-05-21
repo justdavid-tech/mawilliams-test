@@ -12,6 +12,7 @@ import Courses from './components/courses'
 
 import InsightsPage from './pages/insightspage'
 import ArticlePage from './pages/articlepage'
+import VideosPage from './pages/media'
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
 
         {/* Courses Page */}
         <Route path="/institute/courses" element={<Courses />} />
+
+        {/* Media */}
+        <Route path="/media" element={<VideosPage />} />
+
       </Routes>
     </>
   )

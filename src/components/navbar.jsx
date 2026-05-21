@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 
 const NAV_ITEMS = [
@@ -9,12 +10,19 @@ const NAV_ITEMS = [
   { label: "Gateway Consulting", href: "/gateway" },
   { label: "Partners", href: "/partners" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Insights", href: "/insights" },
+  {
+    label: "Insights",
+    dropdown: [
+      { label: "Articles", href: "/insights" },
+      { label: "Media", href: "/media" }
+    ]
+  },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
   const location = useLocation();
   const menuRef = useRef(null);
 
@@ -122,10 +130,11 @@ export default function Navbar() {
         .nav-logo-name {
           font-family: var(--font-heading);
           font-weight: 600;
-          font-size: 15px;
-          color: var(--gold);
+          font-size: 14px;
+          color: var(--white);
           letter-spacing: 0.02em;
           white-space: nowrap;
+          text-transform: uppercase;
         }
 
         .nav-logo-sub {
@@ -149,8 +158,14 @@ export default function Navbar() {
           padding: 0;
         }
 
-        .nav-link-item a {
-          display: block;
+        .nav-link-item {
+          position: relative;
+        }
+
+        .nav-link-item > a {
+          display: flex;
+          align-items: center;
+          gap: 4px;
           font-family: var(--font-body);
           font-size: 13px;
           font-weight: 500;
@@ -164,7 +179,7 @@ export default function Navbar() {
           white-space: nowrap;
         }
 
-        .nav-link-item a::after {
+        .nav-link-item > a::after {
           content: '';
           position: absolute;
           bottom: 4px;
@@ -177,18 +192,60 @@ export default function Navbar() {
           transition: transform 0.25s ease;
         }
 
-        .nav-link-item a:hover,
-        .nav-link-item a.active {
+        .nav-link-item > a:hover,
+        .nav-link-item > a.active {
           color: var(--white);
         }
 
-        .nav-link-item a:hover::after,
-        .nav-link-item a.active::after {
+        .nav-link-item > a:hover::after,
+        .nav-link-item > a.active::after {
           transform: scaleX(1);
         }
 
-        .nav-link-item a.active {
+        .nav-link-item > a.active {
           color: var(--gold);
+        }
+
+        /* DESKTOP DROPDOWN */
+        .nav-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%) translateY(10px);
+          background: var(--brand-deep);
+          min-width: 140px;
+          border: 1px solid rgba(201,168,76,0.18);
+          border-radius: 4px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+          padding: 8px 0;
+          z-index: 1000;
+        }
+
+        .nav-link-item:hover .nav-dropdown {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(-50%) translateY(0);
+        }
+
+        .nav-dropdown-item {
+          display: block;
+          padding: 10px 16px;
+          font-family: var(--font-body);
+          font-size: 13px;
+          font-weight: 500;
+          color: rgba(255,255,255,0.78);
+          text-decoration: none;
+          transition: color 0.2s, background 0.2s;
+          text-align: center;
+        }
+
+        .nav-dropdown-item:hover,
+        .nav-dropdown-item.active {
+          color: var(--gold);
+          background: rgba(255,255,255,0.05);
         }
 
         /* CTA */
@@ -335,7 +392,8 @@ export default function Navbar() {
           border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .drawer-link-item a {
+        .drawer-link-item > a,
+        .drawer-link-item > button.drawer-link-btn {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -348,9 +406,15 @@ export default function Navbar() {
           letter-spacing: 0.02em;
           transition: color 0.2s, padding-left 0.2s, background 0.2s;
           position: relative;
+          background: none;
+          border: none;
+          width: 100%;
+          cursor: pointer;
+          text-align: left;
         }
 
-        .drawer-link-item a .link-index {
+        .drawer-link-item > a .link-index,
+        .drawer-link-item > button.drawer-link-btn .link-index {
           font-family: var(--font-heading);
           font-size: 10px;
           color: var(--gold);
@@ -358,19 +422,53 @@ export default function Navbar() {
           letter-spacing: 0.1em;
         }
 
-        .drawer-link-item a:hover,
-        .drawer-link-item a.active {
+        .drawer-link-item > a:hover,
+        .drawer-link-item > a.active,
+        .drawer-link-item > button.drawer-link-btn:hover,
+        .drawer-link-item > button.drawer-link-btn.active {
           color: var(--white);
           padding-left: 32px;
           background: rgba(255,255,255,0.03);
         }
 
-        .drawer-link-item a.active {
+        .drawer-link-item > a.active,
+        .drawer-link-item > button.drawer-link-btn.active {
           color: var(--gold);
         }
 
-        .drawer-link-item a.active .link-index {
+        .drawer-link-item > a.active .link-index,
+        .drawer-link-item > button.drawer-link-btn.active .link-index {
           opacity: 1;
+        }
+
+        .link-right {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+
+        /* MOBILE DROPDOWN */
+        .drawer-dropdown {
+          background: rgba(0,0,0,0.15);
+          display: flex;
+          flex-direction: column;
+        }
+
+        .drawer-dropdown-item {
+          display: block;
+          padding: 12px 24px 12px 40px;
+          font-family: var(--font-body);
+          font-size: 14px;
+          color: rgba(255,255,255,0.6);
+          text-decoration: none;
+          transition: color 0.2s, background 0.2s;
+          border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .drawer-dropdown-item:hover,
+        .drawer-dropdown-item.active {
+          color: var(--gold);
+          background: rgba(255,255,255,0.03);
         }
 
         .drawer-footer {
@@ -427,7 +525,7 @@ export default function Navbar() {
           .nav-links {
             gap: 0;
           }
-          .nav-link-item a {
+          .nav-link-item > a {
             padding: 8px 8px;
             font-size: 12.5px;
           }
@@ -451,6 +549,8 @@ export default function Navbar() {
             display: none;
           }
         }
+
+        
       `}</style>
 
       {/* Overlay */}
@@ -465,49 +565,63 @@ export default function Navbar() {
         <div className="nav-main-area">
           <div className="nav-inner">
 
-          {/* Logo */}
-          <Link to="/" className="nav-logo" aria-label="M.A. Williams & Co. Home">
-            <div className="nav-logo-text">
-              <span className="nav-logo-name">M.A. Williams & Co.</span>
-              <span className="nav-logo-sub">London · Lagos</span>
-            </div>
-          </Link>
-
-          {/* Desktop Nav */}
-          <ul className="nav-links" role="list">
-            {NAV_ITEMS.map((item) => {
-              const isActive = item.href === '/' ? location.pathname === '/' : location.pathname.startsWith(item.href);
-              return (
-                <li key={item.label} className="nav-link-item">
-                  <Link
-                    to={item.href}
-                    className={isActive ? "active" : ""}
-                    aria-current={isActive ? "page" : undefined}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* CTA + Hamburger */}
-          <div className="nav-cta">
-            <Link to="/contact#contact-form" className="btn-consult" aria-label="Request a consultation">
-              Book Consultation
+            {/* Logo */}
+            <Link to="/" className="nav-logo" aria-label="M.A. Williams & Co. Home">
+              <div className="nav-logo-mark" aria-hidden="true"><span>MAW</span></div>
+              <div className="nav-logo-text">
+                <span className="nav-logo-name">M.A. WILLIAMS & CO.</span>
+              </div>
             </Link>
-            <button
-              className={`nav-hamburger ${menuOpen ? "open" : ""}`}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-drawer"
-            >
-              <span className="ham-line" />
-              <span className="ham-line" />
-              <span className="ham-line" />
-            </button>
-          </div>
+
+            {/* Desktop Nav */}
+            <ul className="nav-links" role="list">
+              {NAV_ITEMS.map((item) => {
+                const isActive = item.href === '/' ? location.pathname === '/' : location.pathname.startsWith(item.href);
+                return (
+                  <li key={item.label} className="nav-link-item">
+                    <Link
+                      to={item.href}
+                      className={isActive ? "active" : ""}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      {item.label}
+                      {item.dropdown && <ChevronDown size={14} style={{ opacity: 0.8 }} />}
+                    </Link>
+                    {item.dropdown && (
+                      <div className="nav-dropdown">
+                        {item.dropdown.map((drop) => (
+                          <Link
+                            key={drop.label}
+                            to={drop.href}
+                            className={`nav-dropdown-item ${location.pathname === drop.href ? "active" : ""}`}
+                          >
+                            {drop.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* CTA + Hamburger */}
+            <div className="nav-cta">
+              <Link to="/contact#contact-form" className="btn-consult" aria-label="Request a consultation">
+                Book Consultation
+              </Link>
+              <button
+                className={`nav-hamburger ${menuOpen ? "open" : ""}`}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={menuOpen}
+                aria-controls="mobile-drawer"
+              >
+                <span className="ham-line" />
+                <span className="ham-line" />
+                <span className="ham-line" />
+              </button>
+            </div>
           </div>
           {/* Gold accent line on scroll */}
           <div className="nav-gold-line" aria-hidden="true" />
@@ -529,8 +643,7 @@ export default function Navbar() {
               <span>MAW</span>
             </div>
             <div className="nav-logo-text">
-              <span className="nav-logo-name">M.A. Williams & Co.</span>
-              <span className="nav-logo-sub">London · Lagos</span>
+              <span className="nav-logo-name">M.A. WILLIAMS & CO.</span>
             </div>
           </Link>
           <button className="drawer-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">
@@ -541,17 +654,46 @@ export default function Navbar() {
         <ul className="drawer-links" role="list">
           {NAV_ITEMS.map((item, i) => {
             const isActive = item.href === '/' ? location.pathname === '/' : location.pathname.startsWith(item.href);
+            const isOpen = openMobileDropdown === item.label;
+
             return (
               <li key={item.label} className="drawer-link-item">
-                <Link
-                  to={item.href}
-                  className={isActive ? "active" : ""}
-                  onClick={() => setMenuOpen(false)}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  {item.label}
-                  <span className="link-index" aria-hidden="true">0{i + 1}</span>
-                </Link>
+                {item.dropdown ? (
+                  <button
+                    className={`drawer-link-btn ${isActive ? "active" : ""}`}
+                    onClick={() => setOpenMobileDropdown(isOpen ? null : item.label)}
+                  >
+                    {item.label}
+                    <span className="link-right">
+                      <span className="link-index" aria-hidden="true">0{i + 1}</span>
+                      {isOpen ? <ChevronUp size={16} color="var(--gold)" /> : <ChevronDown size={16} color="var(--gold)" />}
+                    </span>
+                  </button>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={isActive ? "active" : ""}
+                    onClick={() => setMenuOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {item.label}
+                    <span className="link-index" aria-hidden="true">0{i + 1}</span>
+                  </Link>
+                )}
+                {item.dropdown && isOpen && (
+                  <div className="drawer-dropdown">
+                    {item.dropdown.map((drop) => (
+                      <Link
+                        key={drop.label}
+                        to={drop.href}
+                        className={`drawer-dropdown-item ${location.pathname === drop.href ? "active" : ""}`}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {drop.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </li>
             );
           })}
