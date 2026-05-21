@@ -1,19 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
-
+ 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
     return () => clearTimeout(t);
   }, []);
-
+ 
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=M+PLUS+U:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+ 
         :root {
           --brand-primary: #2F5233;
           --brand-deep:    #1E3622;
@@ -27,7 +27,7 @@ export default function Hero() {
           --font-heading:  "M PLUS U", system-ui, sans-serif;
           --font-body:     "Work Sans", system-ui, sans-serif;
         }
-
+ 
         /* ── HERO WRAPPER ── */
         .hero-section {
           background: var(--cream);
@@ -37,7 +37,7 @@ export default function Hero() {
           position: relative;
           overflow: hidden;
         }
-
+ 
         /* Subtle grid texture */
         .hero-section::before {
           content: '';
@@ -49,7 +49,7 @@ export default function Hero() {
           background-size: 48px 48px;
           pointer-events: none;
         }
-
+ 
         /* Green geometric accent — top-right corner */
         .hero-geo {
           position: absolute;
@@ -59,7 +59,7 @@ export default function Hero() {
           background: radial-gradient(circle, rgba(47,82,51,0.09) 0%, transparent 70%);
           pointer-events: none;
         }
-
+ 
         /* Dot cluster — bottom left */
         .dot-cluster {
           position: absolute;
@@ -75,7 +75,7 @@ export default function Hero() {
           background: var(--brand-primary);
           display: block;
         }
-
+ 
         /* ── HERO INNER ── */
         .hero-inner {
           flex: 1;
@@ -90,10 +90,10 @@ export default function Hero() {
           position: relative;
           z-index: 1;
         }
-
+ 
         /* ── LEFT CONTENT ── */
         .hero-left { display: flex; flex-direction: column; gap: 0; }
-
+ 
         .hero-eyebrow {
           display: inline-flex;
           align-items: center;
@@ -104,7 +104,7 @@ export default function Hero() {
           transition: opacity 0.55s ease, transform 0.55s ease;
         }
         .hero-eyebrow.in { opacity: 1; transform: translateY(0); }
-
+ 
         .eyebrow-pip {
           display: flex; gap: 5px; align-items: center;
         }
@@ -113,7 +113,7 @@ export default function Hero() {
         }
         .pip-gold { background: var(--gold); }
         .pip-green { background: var(--brand-primary); }
-
+ 
         .eyebrow-text {
           font-family: var(--font-body);
           font-size: 12px;
@@ -122,7 +122,7 @@ export default function Hero() {
           text-transform: uppercase;
           color: var(--brand-primary);
         }
-
+ 
         .hero-headline {
           font-family: var(--font-heading);
           font-size: clamp(38px, 4.5vw, 60px);
@@ -136,9 +136,9 @@ export default function Hero() {
           transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
         }
         .hero-headline.in { opacity: 1; transform: translateY(0); }
-
+ 
         .headline-accent { color: var(--brand-primary); }
-
+ 
         .hero-body {
           font-family: var(--font-body);
           font-size: 15px;
@@ -152,7 +152,7 @@ export default function Hero() {
           transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
         }
         .hero-body.in { opacity: 1; transform: translateY(0); }
-
+ 
         .hero-ctas {
           display: flex;
           align-items: center;
@@ -163,7 +163,7 @@ export default function Hero() {
           transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
         }
         .hero-ctas.in { opacity: 1; transform: translateY(0); }
-
+ 
         .btn-primary {
           font-family: var(--font-body);
           font-weight: 600;
@@ -196,7 +196,7 @@ export default function Hero() {
           transition: background .2s;
         }
         .btn-primary:hover .btn-arrow { background: rgba(255,255,255,0.3); }
-
+ 
         .btn-ghost {
           font-family: var(--font-body);
           font-weight: 500;
@@ -215,7 +215,7 @@ export default function Hero() {
           border-bottom: 1px solid rgba(26,26,24,0.2);
         }
         .btn-ghost:hover { color: var(--brand-primary); border-bottom-color: var(--brand-primary); }
-
+ 
         /* Stats strip */
         .hero-stats {
           display: flex;
@@ -248,8 +248,8 @@ export default function Hero() {
           background: rgba(47,82,51,0.15);
           flex-shrink: 0;
         }
-
-        /* ── RIGHT IMAGE COLLAGE ── */
+ 
+        /* ── RIGHT IMAGE ── */
         .hero-right {
           position: relative;
           height: 520px;
@@ -258,118 +258,40 @@ export default function Hero() {
           transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
         }
         .hero-right.in { opacity: 1; transform: translateX(0); }
-
-        .img-card {
-          position: absolute;
-          border-radius: 6px;
+ 
+        /* Single full-coverage image */
+        .hero-img-main {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
           overflow: hidden;
-          background: var(--brand-mid);
-          box-shadow: 0 8px 32px rgba(26,26,24,0.14);
+          box-shadow: 0 16px 48px rgba(26,26,24,0.18);
+          position: relative;
         }
-
-        /* Placeholder image panels with green tones */
-        .img-card::before {
+        .hero-img-main img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          filter: contrast(1.04);
+          transition: transform 0.6s ease;
+        }
+        .hero-img-main:hover img { transform: scale(1.03); }
+ 
+        /* Subtle green tint overlay at the bottom */
+        .hero-img-main::after {
           content: '';
           position: absolute;
           inset: 0;
-          background: inherit;
-        }
-
-        .img-top-left {
-          width: 52%;
-          height: 58%;
-          top: 0; left: 0;
-          background: linear-gradient(145deg, #3D6B42 0%, #2F5233 100%);
-          z-index: 2;
-        }
-
-        .img-top-right {
-          width: 43%;
-          height: 42%;
-          top: 0; right: 0;
-          background: linear-gradient(145deg, #4a7a50 0%, #3D6B42 100%);
-          z-index: 1;
-        }
-
-        .img-bottom {
-          width: 55%;
-          height: 40%;
-          bottom: 0; right: 4%;
-          background: linear-gradient(145deg, #2F5233 0%, #1E3622 100%);
-          z-index: 3;
-        }
-
-        .img-card img {
-          width: 100%; height: 150%;
-          object-fit: cover;
-          display: block;
-          filter: grayscale(15%) contrast(1.05);
-          transition: transform 0.5s ease;
-        }
-        .img-card:hover img { transform: scale(1.04); }
-
-        /* Icon overlays inside placeholder panels */
-        .img-overlay-icon {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          gap: 8px;
-          color: rgba(255,255,255,0.22);
-          font-family: var(--font-heading);
-          font-size: 13px;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
+          background: linear-gradient(
+            to bottom,
+            transparent 55%,
+            rgba(30, 54, 34, 0.35) 100%
+          );
+          border-radius: 10px;
           pointer-events: none;
         }
-        .img-overlay-icon svg { opacity: 0.3; }
-
-        /* Stamp / badge */
-        .stamp {
-          position: absolute;
-          bottom: 88px;
-          left: -12px;
-          width: 104px; height: 104px;
-          z-index: 10;
-          animation: spin-slow 18s linear infinite;
-        }
-        @keyframes spin-slow { to { transform: rotate(360deg); } }
-
-        .stamp-inner {
-          position: relative;
-          width: 100%; height: 100%;
-        }
-        .stamp-circle-text {
-          position: absolute;
-          inset: 0;
-        }
-        .stamp-center {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          animation: spin-slow-reverse 18s linear infinite;
-        }
-        @keyframes spin-slow-reverse { to { transform: rotate(-360deg); } }
-        .stamp-center-inner {
-          width: 46px; height: 46px;
-          background: var(--brand-deep);
-          border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          flex-direction: column;
-          gap: 1px;
-        }
-        .stamp-check { font-size: 16px; color: var(--gold); }
-        .stamp-year {
-          font-family: var(--font-heading);
-          font-size: 8px; font-weight: 700;
-          color: rgba(255,255,255,0.7);
-          letter-spacing: 0.06em;
-        }
-
+ 
         /* Floating tag card */
         .float-tag {
           position: absolute;
@@ -406,7 +328,7 @@ export default function Hero() {
           font-size: 10px; color: var(--ink);
           font-family: var(--font-body); letter-spacing: 0.04em;
         }
-
+ 
         /* Floating metric card */
         .float-metric {
           position: absolute;
@@ -429,13 +351,53 @@ export default function Hero() {
         .float-metric-label {
           font-family: var(--font-body);
           font-size: 10px; font-weight: 500;
-          color: rgba(255,255,255,0.65);
+          color: #fff;
           letter-spacing: 0.07em;
           text-transform: uppercase;
           max-width: 80px;
           line-height: 1.4;
         }
-
+ 
+        /* Rotating stamp */
+        .stamp {
+          position: absolute;
+          bottom: 88px;
+          left: -12px;
+          width: 104px; height: 104px;
+          z-index: 10;
+          animation: spin-slow 18s linear infinite;
+        }
+        @keyframes spin-slow { to { transform: rotate(360deg); } }
+        .stamp-inner {
+          position: relative;
+          width: 100%; height: 100%;
+        }
+        .stamp-circle-text { position: absolute; inset: 0; }
+        .stamp-center {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: spin-slow-reverse 18s linear infinite;
+        }
+        @keyframes spin-slow-reverse { to { transform: rotate(-360deg); } }
+        .stamp-center-inner {
+          width: 46px; height: 46px;
+          background: var(--brand-deep);
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          flex-direction: column;
+          gap: 1px;
+        }
+        .stamp-check { font-size: 16px; color: var(--gold); }
+        .stamp-year {
+          font-family: var(--font-heading);
+          font-size: 8px; font-weight: 700;
+          color: rgba(255,255,255,0.7);
+          letter-spacing: 0.06em;
+        }
+ 
         /* Decorative plus markers */
         .plus-mark {
           position: absolute;
@@ -447,21 +409,15 @@ export default function Hero() {
           z-index: 11;
           animation: float-bob 5s ease-in-out 1.2s infinite;
         }
-
+ 
         /* ── RESPONSIVE ── */
-
-        /* Tablet: 768 – 1024px */
         @media (max-width: 1024px) {
-          .hero-inner {
-            gap: 32px;
-            padding: 64px 32px 56px;
-          }
+          .hero-inner { gap: 32px; padding: 64px 32px 56px; }
           .hero-right { height: 460px; }
           .float-tag  { right: -8px; }
           .float-metric { left: -12px; }
         }
-
-        /* Below 900px: single-column, image collapses below text */
+ 
         @media (max-width: 900px) {
           .hero-inner {
             grid-template-columns: 1fr;
@@ -469,149 +425,71 @@ export default function Hero() {
             text-align: center;
             gap: 40px;
           }
-          .hero-left {
-            align-items: center;
-            order: 1;
-          }
-          .hero-right {
-            order: 2;
-            height: 360px;
-            width: 100%;
-            margin: 0 auto;
-            max-width: 520px;
-          }
-          .hero-body {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-          }
+          .hero-left  { align-items: center; order: 1; }
+          .hero-right { order: 2; height: 400px; width: 100%; margin: 0 auto; max-width: 560px; }
+          .hero-body  { max-width: 600px; margin-left: auto; margin-right: auto; }
           .hero-ctas  { justify-content: center; }
-          .hero-stats {
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px 32px;
-          }
-          /* Pull floating cards inside the collage so they don't overflow */
-          .float-tag    { right: 4px;  top: 12px; }
-          .float-metric { left: 4px;   bottom: 12px; }
+          .hero-stats { justify-content: center; flex-wrap: wrap; gap: 20px 32px; }
+          .float-tag    { right: 4px; top: 12px; }
+          .float-metric { left: 4px;  bottom: 12px; }
           .stamp        { left: 50%; transform: translateX(-50%); bottom: 72px; }
         }
-
-        /* Mobile: ≤ 600px — keep full collage, scale it to fit */
+ 
         @media (max-width: 600px) {
           .hero-section { min-height: auto; }
-
-          .hero-inner {
-            padding: 40px 16px 40px;
-            gap: 28px;
-          }
-
-          .eyebrow-pip {
-            padding-bottom: 15px;
-          }
-
-          .hero-headline {
-            font-size: clamp(28px, 8vw, 36px);
-            line-height: 1.12;
-          }
-          .hero-body { font-size: 14px; }
-
-          /* Taller panel so all 3 cards have room */
-          .hero-right {
-            height: 420px;
-            max-width: 100%;
-            width: 100%;
-          }
-
-          /* Keep all image cards — just clamp them inside the panel */
-          .img-card.img-top-left  { width: 54%; height: 55%; }
-          .img-card.img-top-right { width: 42%; height: 40%; }
-          .img-card.img-bottom    { width: 54%; height: 38%; }
-
-          /* Floating tag — keep inside right panel, scale down */
+          .hero-inner   { padding: 40px 16px 40px; gap: 28px; }
+          .eyebrow-pip  { padding-bottom: 15px; }
+          .hero-headline { font-size: clamp(28px, 8vw, 36px); line-height: 1.12; }
+          .hero-body    { font-size: 14px; }
+          .hero-right   { height: 300px; max-width: 100%; width: 100%; }
+ 
           .float-tag {
-            right: 2px;
-            top: 10px;
-            padding: 8px 10px;
-            gap: 8px;
-            font-size: 11px;
+            right: 2px; top: 10px;
+            padding: 8px 10px; gap: 8px; font-size: 11px;
           }
           .float-tag-title { font-size: 11px; }
           .float-tag-sub   { font-size: 9px; }
           .float-tag-dot   { width: 26px; height: 26px; }
           .float-tag-dot span { font-size: 13px; }
-
-          /* Floating metric — keep inside, scale down */
-          .float-metric {
-            left: 2px;
-            bottom: 10px;
-            padding: 10px 12px;
-            gap: 8px;
-          }
+ 
+          .float-metric { left: 2px; bottom: 10px; padding: 10px 12px; gap: 8px; }
           .float-metric-num   { font-size: 16px; }
           .float-metric-label { font-size: 9px; max-width: 64px; }
-
-          /* Stamp — smaller, centred horizontally */
-          .stamp {
-            width: 76px;
-            height: 76px;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-          }
-
-          /* Stats */
-          .hero-stats {
-            gap: 12px 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-          }
+ 
+          .stamp { width: 76px; height: 76px; bottom: 60px; left: 50%; transform: translateX(-50%); }
+ 
+          .hero-stats { gap: 12px 20px; justify-content: center; flex-wrap: wrap; }
           .stat-divider { display: none; }
           .stat { align-items: center; }
           .stat-num { font-size: 22px; }
-
-          /* CTAs stack */
-          .hero-ctas {
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-          }
-          .btn-primary, .btn-ghost {
-            width: 100%;
-            justify-content: center;
-            max-width: 280px;
-          }
-
+ 
+          .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
+          .btn-primary, .btn-ghost { width: 100%; justify-content: center; max-width: 280px; }
           .dot-cluster { display: none; }
         }
-
-        /* Extra-small: ≤ 380px */
+ 
         @media (max-width: 380px) {
           .hero-headline { font-size: 26px; }
-          .hero-right    { height: 360px; }
-          .img-card.img-top-left  { width: 56%; height: 52%; }
-          .img-card.img-top-right { width: 40%; height: 38%; }
-          .img-card.img-bottom    { width: 52%; height: 36%; }
-          .float-tag    { display: none; }
-          .float-metric { padding: 8px 10px; }
+          .hero-right    { height: 260px; }
+          .float-tag     { display: none; }
+          .float-metric  { padding: 8px 10px; }
           .float-metric-num { font-size: 14px; }
         }
       `}</style>
+ 
       {/* ── HERO SECTION ── */}
       <section className="hero-section" aria-label="Homepage hero">
         <div className="hero-geo" aria-hidden="true" />
-
-        {/* Dot cluster decoration */}
+ 
         <div className="dot-cluster" aria-hidden="true">
           {Array.from({ length: 30 }).map((_, i) => <span key={i} />)}
         </div>
-
+ 
         <div className="hero-inner">
-
+ 
           {/* LEFT — Content */}
           <div className="hero-left">
-
-            {/* Eyebrow */}
+ 
             <div className={`hero-eyebrow ${visible ? "in" : ""}`}>
               <div className="eyebrow-pip">
                 <div className="pip pip-gold" />
@@ -619,24 +497,21 @@ export default function Hero() {
               </div>
               <span className="eyebrow-text">Intellectual Architecture. Global Reach.</span>
             </div>
-
-            {/* Headline */}
+ 
             <h1 className={`hero-headline ${visible ? "in" : ""}`}>
               The International<br />
               Home of <span className="headline-accent">African</span><br />
               Agricultural<br />
               Intelligence.
             </h1>
-
-            {/* Body */}
+ 
             <p className={`hero-body ${visible ? "in" : ""}`}>
               M.A. Williams & Co. is the international family office, IP repository,
-              and global contracting arm of the Yomi Williams Group a purposefully
+              and global contracting arm of the Yomi Williams Group — a purposefully
               structured ecosystem built on three decades of frontline agribusiness
               experience across Nigeria and the United Kingdom.
             </p>
-
-            {/* CTAs */}
+ 
             <div className={`hero-ctas ${visible ? "in" : ""}`}>
               <a href="/institute" className="btn-primary">
                 Explore the Institute
@@ -646,8 +521,7 @@ export default function Hero() {
                 Gateway Consulting
               </a>
             </div>
-
-            {/* Stats */}
+ 
             <div className={`hero-stats ${visible ? "in" : ""}`}>
               <div className="stat">
                 <span className="stat-num">30<span>+</span></span>
@@ -665,27 +539,14 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
-          {/* RIGHT — Collage */}
+ 
+          {/* RIGHT — Single Image */}
           <div className={`hero-right ${visible ? "in" : ""}`} aria-hidden="true">
-
-            {/* Image panels — replace background with real <img> tags */}
-            <div className="img-card img-top-left">
-                <img style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }} src="/assets/hero-image (3).jpg" alt="" />
+ 
+            <div className="hero-img-main">
+              <img src="/assets/hero-main.jpeg" alt="African agricultural landscape" />
             </div>
-
-            <div className="img-card img-top-right">
-              <div className="img-overlay-icon">
-                <img style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }} src="/assets/hero-image (2).jpg" alt="" />
-              </div>
-            </div>
-
-            <div className="img-card img-bottom">
-              <div className="img-overlay-icon">
-                <img style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }} src="/assets/hero-image (1).jpg" alt="" />
-              </div>
-            </div>
-
+ 
             {/* Floating tag */}
             <div className="float-tag">
               <div className="float-tag-dot"><span>🌿</span></div>
@@ -694,13 +555,13 @@ export default function Hero() {
                 <span className="float-tag-sub">International Contracting</span>
               </div>
             </div>
-
+ 
             {/* Floating metric */}
             <div className="float-metric">
               <div className="float-metric-num">200ha</div>
               <div className="float-metric-label">Regenerative estate, Ogun State</div>
             </div>
-
+ 
             {/* Rotating stamp */}
             <div className="stamp">
               <div className="stamp-inner">
@@ -721,8 +582,7 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-
-            {/* Decorative plus marks */}
+ 
             <span className="plus-mark" style={{ bottom: "44px", right: "16px" }}>✦</span>
             <span className="plus-mark" style={{ top: "130px", right: "8px", fontSize: 14, animationDelay: "0.5s" }}>+</span>
           </div>
@@ -731,3 +591,4 @@ export default function Hero() {
     </>
   );
 }
+ 
