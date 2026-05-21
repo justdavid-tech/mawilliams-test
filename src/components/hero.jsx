@@ -507,7 +507,7 @@ export default function Hero() {
  
             <p className={`hero-body ${visible ? "in" : ""}`}>
               M.A. Williams & Co. is the international family office, IP repository,
-              and global contracting arm of the Yomi Williams Group — a purposefully
+              and global contracting arm of the Yomi Williams Group, a purposefully
               structured ecosystem built on three decades of frontline agribusiness
               experience across Nigeria and the United Kingdom.
             </p>
