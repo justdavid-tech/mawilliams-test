@@ -97,8 +97,8 @@ export default function Navbar() {
         }
 
         .nav-logo-mark {
-          width: 38px;
-          height: 38px;
+          width: 46px;
+          height: 46px;
           background: var(--gold);
           display: flex;
           align-items: center;
@@ -131,7 +131,7 @@ export default function Navbar() {
           font-family: var(--font-heading);
           font-weight: 600;
           font-size: 14px;
-          color: var(--white);
+          color: var(--gold);
           letter-spacing: 0.02em;
           white-space: nowrap;
           text-transform: uppercase;
@@ -567,7 +567,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" className="nav-logo" aria-label="M.A. Williams & Co. Home">
-              <div className="nav-logo-mark" aria-hidden="true"><span>MAW</span></div>
+              <div className="nav-logo-mark" aria-hidden="true"><span>M.A.W</span></div>
               <div className="nav-logo-text">
                 <span className="nav-logo-name">M.A. WILLIAMS & CO.</span>
               </div>

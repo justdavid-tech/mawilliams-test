@@ -5,7 +5,8 @@ const NAV_LINKS = [
   { label: "Gateway Consulting", href: "/gateway" },
   { label: "Partners", href: "/partners" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Insights", href: "/insights" },
+  { label: "Article", href: "/insights" },
+  { label: "Media", href: "/media" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -168,7 +169,7 @@ export default function Footer() {
         .logo-text-col { display: flex; flex-direction: column; line-height: 1; }
         .logo-name {
           font-family: var(--font-heading);
-          font-size: 14px; font-weight: 600; color: var(--white); letter-spacing: 0.02em;
+          font-size: 14px; font-weight: 600; color: var(--gold); letter-spacing: 0.02em;
         }
         .logo-sub {
           font-size: 9.5px; font-weight: 400; color: var(--gold);
@@ -364,7 +365,7 @@ export default function Footer() {
               <div className="contact-item">
                 <div className="contact-dot" aria-hidden="true" />
                 <span className="contact-text">
-                  71–75 Shelton Street, Covent Garden,<br />London WC2H 9JQ, United Kingdom
+                  71–75 Shelton Street, Covent Garden,<br />London WC2H 9JQ
                 </span>
               </div>
               <div className="contact-item">
@@ -376,8 +377,8 @@ export default function Footer() {
               <div className="contact-item">
                 <div className="contact-dot" aria-hidden="true" />
                 <span className="contact-text">
-                  <a href="mailto:yomi.williams@mawilliamsco.com">
-                    yomi.williams@mawilliamsco.com
+                  <a href="mailto:info@mawilliamsco.com">
+                    info@mawilliamsco.com
                   </a>
                 </span>
               </div>

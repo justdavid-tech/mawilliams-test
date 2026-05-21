@@ -48,7 +48,7 @@ export default function UpperHeader() {
                 size={14}
                 className="text-[#C9A84C] transition-transform duration-200 group-hover:scale-110"
               />
-              <span className="tracking-wide">+234 818 581 1939</span>
+              <span className="tracking-wide">+44 7444 167 970</span>
             </a>
 
             {/* Email */}
@@ -70,7 +70,7 @@ export default function UpperHeader() {
                 className="flex-shrink-0 text-[#C9A84C]"
               />
               <span className="truncate tracking-wide">
-                54A Earls Court Road, Ikate Lekki, Lagos State, Nigeria
+                 71–75 Shelton Street, Covent Garden, London WC2H 9JQ
               </span>
             </div>
           </div>
