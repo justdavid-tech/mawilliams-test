@@ -5,6 +5,7 @@ import FiveFunctions from "../components/fivefunction"
 import QuoteSection from "../components/quote"
 import CapabilityStrip from "../components/capabilitystrip"
 import InstituteHighlight from "../components/institutehighlight"
+import YouTubeFeed from "../components/youtubefeed"
 import InsightsPreview from "../components/insightspreview"
 import Loader from "../components/loader"
 
@@ -30,6 +31,7 @@ export default function Home() {
       <QuoteSection />
       <CapabilityStrip />
       <InstituteHighlight />
+      <YouTubeFeed />
       <InsightsPreview />
     </>
   )

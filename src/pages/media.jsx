@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Play, ArrowRight, Share2, X, Check } from "lucide-react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { getAllMedia } from "../lib/sanity";
+import AutoSlider from "../components/autoslider";
 
 /* ─────────────────────────────────────────────
    Animation Hook
@@ -49,23 +50,6 @@ function Fade({ children, delay = 0, className = "" }) {
   );
 }
 
-/* ─────────────────────────────────────────────
-   Video Data
-───────────────────────────────────────────── */
-const HARDCODED_VIDEOS = [
-  { id: "d_hU4F375rc", title: "Why I left Oil and Gas Sector For Farming", category: "Hydroponics" },
-  { id: "jSBBhkDA78Q", title: "Growing Food With Hydroponics", category: "Food Innovation" },
-  { id: "Y5Zi55FiRGQ", title: "Financial Literacy Initiative", category: "Community Impact" },
-  { id: "ncIS_y82GaE", title: "Young Nigerian Adopts Hydroponics Methods In Lekki", category: "Hydroponics" },
-  { id: "k3vXbTKOg0c", title: "Young Nigerian Adopts Hydroponics Methods In Lekki Part 2", category: "Hydroponics" },
-  { id: "q2potVGV6a4", title: "Young Nigerian Adopts Hydroponics Methods In Lekki Part 3", category: "Hydroponics" },
-  { id: "zaWjtoV2-O0", title: "Focus on Hydroponics Part 3", category: "Hydroponics" },
-  { id: "0FKkjTCu948", title: "Growing Food with Hydroponics in Nigeria", category: "Hydroponics" },
-  { id: "Rx9s34yH784", title: "Financial Literacy Talk for Small Holders Farmers", category: "Finance" },
-  { id: "XBuq1iEv2no", title: "A View Of What Hydroponics Farming Looks Like", category: "Hydroponics" },
-  { id: "9mmD3OyIw30", title: "AIICO Documentary", category: "Partnership" },
-  { id: "8jFeiqotAAQ", title: "Union Bank Documentary", category: "Partnership" },
-];
 
 /* ── Helpers ── */
 function getYouTubeId(url) {
@@ -95,12 +79,12 @@ function Hero() {
   <p className="uppercase tracking-[0.3em] text-[14.5px] font-semibold text-white mb-4">
     Field Perspectives
   </p>
-  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-semibold text-white leading-tight mb-6">
+  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-semibold text-white leading-tight mb-6">
     Innovation at The Root of Growth
     <br />
  
   </h1>
-  <p className="max-w-2xl mx-auto text-white text-lg leading-relaxed">
+  <p className="max-w-2xl mx-auto text-white text-lg font-body leading-relaxed">
     A collection of insights on the technology, systems, and institutional shifts 
     reshaping how we feed the continent.
   </p>
@@ -117,7 +101,7 @@ function VideoGrid({ videos, onShare }) {
   if (!videos?.length) return null;
 
   return (
-    <section id="videos" className="relative py-24 bg-[#294b33] overflow-hidden">
+    <section id="videos" className="relative py-24 bg-[#1E3622] overflow-hidden">
       {/* Background Texture */}
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -133,11 +117,9 @@ function VideoGrid({ videos, onShare }) {
           <p className="uppercase tracking-[0.3em] text-[14.5px] font-semibold text-white mb-4">
             Featured Library
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-white leading-tight">
-            Watch Our Latest
-            <br />
-            <em className="italic text-gc-green-400">Documentaries & Insights.</em>
-          </h2>
+       <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-semibold text-white leading-tight">
+  Explore Our Latest Agricultural Intelligence
+</h2>
         </Fade>
 
         {/* Video Grid */}
@@ -159,7 +141,7 @@ function VideoGrid({ videos, onShare }) {
                 {/* Content */}
                 <div className="p-6 bg-gradient-to-b from-white/[0.03] to-transparent">
                   <div className="flex items-center justify-between gap-4 mb-4">
-                    <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-gc-green-400 font-semibold">
+                    <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-white font-semibold">
                       <Play size={12} />
                       {video.category}
                     </span>
@@ -249,17 +231,16 @@ export default function VideosPage() {
     }
   };
 
+  // Load videos from Sanity and YouTube
   useEffect(() => {
     async function fetchData() {
       try {
         const mediaItems = await getAllMedia();
         const sanityVideos = mediaItems.filter((m) => m.type === "video");
-
         const { items: ytItems, nextToken } = await fetchYouTubeVideos();
         setYtNextPageToken(nextToken);
 
-        const combinedVideos = [...sanityVideos, ...ytItems, ...HARDCODED_VIDEOS];
-
+        const combinedVideos = [...sanityVideos, ...ytItems];
         const uniqueVideos = [];
         const seenIds = new Set();
         combinedVideos.forEach((v) => {
@@ -269,17 +250,18 @@ export default function VideosPage() {
             seenIds.add(vidId);
           }
         });
-
         setVideos(uniqueVideos);
       } catch (err) {
         console.error("Sanity fetch error:", err);
-        setVideos(HARDCODED_VIDEOS);
+        setVideos([]);
       } finally {
         setLoading(false);
       }
     }
     fetchData();
   }, []);
+
+
 
   const handleLoadMore = async () => {
     if (!ytNextPageToken || loadingMore) return;
@@ -321,6 +303,7 @@ export default function VideosPage() {
         </div>
       ) : (
         <div className="bg-[#294b33] pb-24">
+          <AutoSlider />
           <VideoGrid videos={videos} onShare={setShareVideo} />
 
           {ytNextPageToken && (

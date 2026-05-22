@@ -571,7 +571,7 @@ export default function Hero() {
                   </defs>
                   <circle cx="52" cy="52" r="46" fill="#1E3622" stroke="#C9A84C" strokeWidth="1.5" />
                   <text fill="#C9A84C" fontSize="8.5" fontFamily="Work Sans, sans-serif" fontWeight="600" letterSpacing="2.5">
-                    <textPath href="#circle">SINCE 1994 · M.A. WILLIAMS & CO. · </textPath>
+                    <textPath href="#circle">SINCE 2021 · M.A. WILLIAMS & CO. · </textPath>
                   </text>
                 </svg>
                 <div className="stamp-center">
