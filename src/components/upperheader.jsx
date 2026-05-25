@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const SOCIAL_LINKS = [
   {
     label: "Instagram",
-    href: "https://www.instagram.com/mawilliamsco?igsh=MTc3dXllbmpweXlvcw%3D%3D",
+    href: "https://www.instagram.com/mawilliamscoc?utm_source=qr&igsh=Y2FqemtuZ2JndGwy",
     icon: (size) => (
       <svg
         width={size}
@@ -23,9 +23,43 @@ const SOCIAL_LINKS = [
         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
       </svg>
     ),
-  }
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/yomi-williams-448388172?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    icon: (size) => (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect width="4" height="12" x="2" y="9" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    ),
+  },
+  {
+    label: "X",
+    href: "https://x.com/MAWilliamsco",
+    icon: (size) => (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        stroke="none"
+      >
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
 ];
-
 /* ──────────────────────────────────────────────────────────
    Component
 ────────────────────────────────────────────────────────── */

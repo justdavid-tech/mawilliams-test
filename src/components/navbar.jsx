@@ -5,7 +5,13 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  {
+    label: "About",
+    dropdown: [
+      { label: "About", href: "/about" },
+      { label: "Profiles", href: "/profile" }
+    ]
+  },
   { label: "Institute", href: "/institute" },
   { label: "Gateway Consulting", href: "/gateway" },
   { label: "Partners", href: "/partners" },
@@ -576,17 +582,32 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <ul className="nav-links" role="list">
               {NAV_ITEMS.map((item) => {
-                const isActive = item.href === '/' ? location.pathname === '/' : location.pathname.startsWith(item.href);
+                const isActive = item.href
+                  ? item.href === '/'
+                    ? location.pathname === '/'
+                    : location.pathname.startsWith(item.href)
+                  : false;
                 return (
                   <li key={item.label} className="nav-link-item">
-                    <Link
-                      to={item.href}
-                      className={isActive ? "active" : ""}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {item.label}
-                      {item.dropdown && <ChevronDown size={14} style={{ opacity: 0.8 }} />}
-                    </Link>
+                    {item.dropdown ? (
+                      <a
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        className={isActive ? "active" : ""}
+                        aria-haspopup="true"
+                      >
+                        {item.label}
+                        <ChevronDown size={14} style={{ opacity: 0.8 }} />
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={isActive ? "active" : ""}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                     {item.dropdown && (
                       <div className="nav-dropdown">
                         {item.dropdown.map((drop) => (
@@ -653,7 +674,11 @@ export default function Navbar() {
 
         <ul className="drawer-links" role="list">
           {NAV_ITEMS.map((item, i) => {
-            const isActive = item.href === '/' ? location.pathname === '/' : location.pathname.startsWith(item.href);
+            const isActive = item.href
+              ? item.href === '/'
+                ? location.pathname === '/'
+                : location.pathname.startsWith(item.href)
+              : false;
             const isOpen = openMobileDropdown === item.label;
 
             return (

@@ -529,6 +529,17 @@ function CommunityHub() {
             </div>
           ))}
         </div>
+
+        <div className={`community-social ${visible ? "anim-in" : ""}`} style={{ textAlign: "center", animationDelay: "0.4s" }}>
+          <a href="https://www.instagram.com/mawilliamsinstitute?utm_source=qr&igsh=MTc3dXllbmpweXlvcw%3D%3D" target="_blank" rel="noopener noreferrer" className="inst-social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+            <span>Join our community on Instagram</span>
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -874,6 +885,16 @@ export default function Institute() {
         .community-num { font-family: var(--fh); font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 0.08em; flex-shrink: 0; }
         .community-name { font-family: var(--fh); font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.3; letter-spacing: -0.01em; }
         .community-body { font-size: 13px; line-height: 1.72; color: var(--ink); }
+        .community-social { margin-top: 40px; }
+        .inst-social-link {
+          display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+          padding: 14px 28px; border-radius: 999px;
+          background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+          color: var(--ink); text-decoration: none; font-family: var(--fb); font-size: 13.5px; font-weight: 600;
+          transition: all 0.25s ease;
+        }
+        .inst-social-link:hover { background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.5); transform: translateY(-2px); }
+        .inst-social-link svg { color: var(--gold); }
 
         /* ══ CLOSING CTA ══ */
         .inst-cta { background: #0F1E13; padding: 88px 0; }
