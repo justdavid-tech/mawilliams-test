@@ -76,15 +76,15 @@ const HIBISCUS_SPECS = [
 ];
 
 const VERTICAL_SPECS = [
-  { label: "Period", value: "2017 – 2021" },
-  { label: "Installations", value: "Five urban vertical farms" },
-  { label: "Location", value: "Lagos, Nigeria" },
-  { label: "Technology", value: "Automated hydroponic systems" },
-  { label: "Achievement", value: "First automated hydroponic farms in Africa" },
-  { label: "Integration", value: "Nigeria's first restaurant-integrated grow system" },
-  { label: "Impact", value: "50% reduction in water usage vs. conventional" },
-  { label: "Training output", value: "First cohort of trained Nigerian hydroponic practitioners" },
-  { label: "IP status", value: "Methodology now embedded in Institute curriculum" },
+  { label: "Scale", value: "300 towers" },
+  { label: "Location", value: "Lekki Phase 1, Lagos" },
+  { label: "Model", value: "Automated Vertical Hydroponic System" },
+  { label: "Irrigation", value: "Hydroponic flood, drain and recirculate" },
+  { label: "Sensing", value: "Weather and water sensor" },
+  { label: "Management", value: "Gartner Callaway" },
+  { label: "Energy", value: "Solar" },
+  { label: "Primary Product", value: "Premium Herbs & Vegetables" },
+  { label: "Consumer Brand", value: "Gartner Callaway" },
 ];
 
 /* ─────────────────────────────────────────
@@ -249,7 +249,7 @@ function HibiscusEstate() {
     <section className="port-venture-section port-hibiscus" ref={ref} aria-labelledby="port-hib-h">
       <div className="port-inner">
         <div className={`port-venture-header ${vis ? "vis-up" : ""}`}>
-          <div className="port-venture-header-left">
+          <div className={`port-venture-header-left ${vis ? "vis-up" : ""}`}>
             <Kicker label="Featured venture" light />
             <div className="port-venture-label-row">
               <span className="port-venture-label">01</span>
@@ -259,6 +259,14 @@ function HibiscusEstate() {
             <h2 className="port-venture-h" id="port-hib-h">
               200 hectares.<br />One regenerative vision.
             </h2>
+            {/* ── HIBISCUS IMAGE ── */}
+            <div className="port-venture-img-wrap">
+              <img
+                src="/assets/hibiscus.jpeg"
+                alt="Hibiscus Estate — 200-hectare regenerative agroforestry estate, Ogun State, Nigeria"
+                className="port-venture-img"
+              />
+            </div>
           </div>
           <div className={`port-venture-header-right ${vis ? "vis-right" : ""}`}>
             <p className="port-venture-body">
@@ -274,7 +282,7 @@ function HibiscusEstate() {
           </div>
         </div>
 
-        {/* Spec grid */}
+               {/* Spec grid */}
         <div className={`port-spec-grid ${vis ? "vis-up" : ""}`} style={{ animationDelay: "0.2s" }}>
           {HIBISCUS_SPECS.map((s, i) => (
             <div key={s.label} className="port-spec-item">
@@ -329,6 +337,14 @@ function VerticalFarms() {
             <h2 className="port-venture-h port-venture-h-dark" id="port-vert-h">
               Africa's first.<br />Still the standard.
             </h2>
+            {/* ── VERTICAL FARMS IMAGE ── */}
+            <div className="port-venture-img-wrap">
+              <img
+                src="/assets/hydroponics.jpeg"
+                alt="Urban Vertical Hydroponic farms — Lagos, Nigeria"
+                className="port-venture-img"
+              />
+            </div>
           </div>
           <div className={`port-venture-header-right ${vis ? "vis-right" : ""}`}>
             <p className="port-venture-body port-venture-body-dark">
@@ -338,28 +354,44 @@ function VerticalFarms() {
               One installation was Nigeria's first restaurant-integrated grow system fresh produce grown on-site for direct kitchen use, eliminating the supply chain between farm and plate. Water consumption was reduced by 50% against conventional field production.
             </p>
             <p className="port-venture-body port-venture-body-dark">
-              The technical knowledge from these installations did not sit in a filing cabinet. It became the foundation of the Greenhouse & Controlled Environment module in the M.A. Williams Institute's Production Systems school making it available to every future practitioner on the platform.
+              The technical knowledge from these installations did not sit in a filing cabinet. It became the foundation of the Greenhouse &amp; Controlled Environment module in the M.A. Williams Institute's Production Systems school making it available to every future practitioner on the platform.
             </p>
           </div>
         </div>
 
-        {/* Spec grid + IP note side by side */}
-        <div className={`port-vert-body ${vis ? "vis-up" : ""}`} style={{ animationDelay: "0.18s" }}>
-          <div className="port-spec-grid port-spec-grid-dark">
-            {VERTICAL_SPECS.map(s => (
-              <div key={s.label} className="port-spec-item port-spec-item-dark">
-                <span className="port-spec-label port-spec-label-dark">{s.label}</span>
-                <span className="port-spec-value port-spec-value-dark">{s.value}</span>
+        {/* Spec grid */}
+        <div className={`port-spec-grid port-spec-grid-dark ${vis ? "vis-up" : ""}`} style={{ animationDelay: "0.18s" }}>
+          {VERTICAL_SPECS.map(s => (
+            <div key={s.label} className="port-spec-item port-spec-item-dark">
+              <span className="port-spec-label port-spec-label-dark">{s.label}</span>
+              <span className="port-spec-value port-spec-value-dark">{s.value}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Value chain strip */}
+        <div className={`port-chain ${vis ? "vis-up" : ""}`} style={{ animationDelay: "0.28s" }}>
+          <p className="port-chain-label port-chain-label-dark">Value chain</p>
+          <div className="port-chain-steps port-chain-steps-dark">
+            {[
+              "Towers",
+              "Hydroponic soil substrate",
+              "Automated dosing",
+              "Filtration & UV",
+              "Food-safe workflows"
+            ].map((step, i, arr) => (
+              <div key={step} className="port-chain-step-wrap">
+                <span className="port-chain-step port-chain-step-dark">{step}</span>
+                {i < arr.length - 1 && <span className="port-chain-arrow port-chain-arrow-dark" aria-hidden="true">→</span>}
               </div>
             ))}
           </div>
-
-    
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ─────────────────────────────────────────
    SECTION 5: CLOSING CTA
@@ -405,6 +437,10 @@ export default function Portfolio() {
           --fh: "M PLUS U", system-ui, sans-serif;
           --fb: "Work Sans", system-ui, sans-serif;
         }
+
+        // * {
+        // border: 2px solid red;
+        // }
 
         .portfolio-page { font-family: var(--fb); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
@@ -636,6 +672,20 @@ export default function Portfolio() {
         }
         .port-venture-h-dark { color: var(--ink); }
 
+        /* Venture images */
+        .port-venture-img-wrap {
+          margin-top: 24px;
+          border-radius: 6px;
+          overflow: hidden;
+          border: 1px solid rgba(201,168,76,0.18);
+        }
+        .port-venture-img {
+          width: 100%;
+          height: 240px;
+          object-fit: cover;
+          display: block;
+        }
+
         .port-venture-body {
           font-size: 14px; line-height: 1.78;
           color: var(--white); margin-bottom: 14px;
@@ -687,6 +737,24 @@ export default function Portfolio() {
         }
         .port-spec-value-dark { color: var(--ink); }
 
+        // Hydroponics
+        .port-spec-item {
+          background: rgba(255,255,255,0.04);
+          padding: 16px 18px;
+          display: flex; flex-direction: column; gap: 5px;
+        }
+        .port-spec-item-dark { background: var(--white); }
+        .port-spec-label {
+          font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+          text-transform: uppercase; color: var(--gold);
+        }
+        .port-spec-label-dark { color: var(--green); }
+        .port-spec-value {
+          font-size: 13px; font-weight: 500; line-height: 1.5;
+          color: rgba(255,255,255,0.75);
+        }
+        .port-spec-value-dark { color: var(--ink); }
+
         /* Value chain */
         .port-chain { opacity: 0; }
         .port-chain.vis-up { opacity: 1; }
@@ -709,6 +777,12 @@ export default function Portfolio() {
           border: 1px solid rgba(201,168,76,0.2);
         }
         .port-chain-arrow { color: var(--gold); font-size: 13px; opacity: 0.5; }
+
+        /* Value chain dark theme */
+        .port-chain-label-dark { color: var(--green); }
+        .port-chain-steps-dark { background: rgba(47,82,51,0.05); border-color: rgba(47,82,51,0.15); }
+        .port-chain-step-dark { color: var(--ink); border-color: rgba(47,82,51,0.15); background: var(--white); }
+        .port-chain-arrow-dark { color: var(--green); opacity: 0.6; }
 
         /* Vertical farms — two-col body */
         .port-vert-body {
