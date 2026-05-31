@@ -289,7 +289,7 @@ export default function Profile() {
               <div className="prof-meta">
                 <span className="prof-meta-item">
                   <span className="prof-meta-dot" aria-hidden="true" />
-                  Energy Finance
+                  Finance
                 </span>
                 <span className="prof-meta-sep" aria-hidden="true">·</span>
                 <span className="prof-meta-item">
