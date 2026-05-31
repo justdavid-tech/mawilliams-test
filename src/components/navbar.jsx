@@ -13,8 +13,7 @@ const NAV_ITEMS = [
     ]
   },
   { label: "Institute", href: "/institute" },
-  { label: "Gateway Consulting", href: "/gateway" },
-  { label: "Partners", href: "/partners" },
+  { label: "International Partners", href: "/international" },
   { label: "Portfolio", href: "/portfolio" },
   {
     label: "Insights",

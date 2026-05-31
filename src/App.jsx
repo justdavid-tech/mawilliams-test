@@ -3,8 +3,7 @@ import './App.css'
 import Home from './pages/home'
 import About from './pages/about'
 import Institute from './pages/institute'
-import GatewayConsulting from './pages/gateway'
-import Partners from './pages/partners'
+import InternationalPartnersPage from './pages/internationalpage'
 import Portfolio from './pages/portfolio'
 import Contact from './pages/contact'
 import Loader from './components/loader'
@@ -24,8 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/institute" element={<Institute />} />
-        <Route path="/gateway" element={<GatewayConsulting />} />
-        <Route path="/partners" element={<Partners />} />
+        <Route path="/international" element={<InternationalPartnersPage />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
 
