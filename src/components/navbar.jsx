@@ -572,10 +572,11 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" className="nav-logo" aria-label="M.A. Williams & Co. Home">
-              <div className="nav-logo-mark" aria-hidden="true"><span>M.A.W</span></div>
+              {/* <div className="nav-logo-mark" aria-hidden="true"><span>M.A.W</span></div>
               <div className="nav-logo-text">
                 <span className="nav-logo-name">M.A. WILLIAMS & CO.</span>
-              </div>
+              </div> */}
+              <img src="/assets/logomain.png" className="w-60" alt="Mawilliamsco logo" />
             </Link>
 
             {/* Desktop Nav */}
