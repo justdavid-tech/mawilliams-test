@@ -38,9 +38,15 @@ const GROUP = [
     tag: "London",
   },
   {
-    name: "Lambert Willis Nigeria",
+    name: "M.A. Williams & Co. Nigeria",
+    role: "The Nigerian HoldCo.",
+    desc: "Local institutional anchor for the family office. Holds Nigerian land, property, and assets. Owns Lambert Willis.",
+    tag: "Nigeria",
+  },
+  {
+    name: "Lambert Willis",
     role: "The active African arm.",
-    desc: "Holds Nigerian land, property, and local investments. Acts as M.A. Williams' proxy in every African business venture providing local shareholding, directorship, and full representation.",
+    desc: "The operational vehicle. Executes consulting, advisory, and training under M.A. Williams brand capabilities. Holds a stake in the Gartner Callaway Group. Handles estate operations at the Hibiscus Estate on behalf of M.A. Williams.",
     tag: "Lagos",
   },
   {
@@ -266,7 +272,7 @@ function GroupStructure() {
         <div className={`investor-note ${visible ? "anim-in" : ""}`} style={{ animationDelay: "0.42s" }}>
           <span className="investor-note-label" aria-hidden="true">For investors & partners</span>
           <p className="investor-note-body">
-            The separation of IP (M.A. Williams), assets (Lambert Willis), and operations (Gartner Callaway) is intentional and protective. If you invest in or partner with any part of the group, you are engaging with a properly governed, structurally sound entity, not an ad hoc arrangement.
+            The separation of IP (M.A. Williams UK), assets (M.A. Williams Nigeria), and operations (Gartner Callaway) is intentional and protective. If you invest in or partner with any part of the group, you are engaging with a properly governed, structurally sound entity, not an ad hoc arrangement.
           </p>
         </div>
       </div>
