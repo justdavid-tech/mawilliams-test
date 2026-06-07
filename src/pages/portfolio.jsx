@@ -293,7 +293,7 @@ function HibiscusEstate() {
           </div>
         </div>
 
-               {/* Spec grid */}
+        {/* Spec grid */}
         <div className={`port-spec-grid ${vis ? "vis-up" : ""}`} style={{ animationDelay: "0.2s" }}>
           {HIBISCUS_SPECS.map((s, i) => (
             <div key={s.label} className="port-spec-item">
