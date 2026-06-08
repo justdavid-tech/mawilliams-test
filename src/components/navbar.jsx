@@ -101,6 +101,13 @@ export default function Navbar() {
           flex-shrink: 0;
         }
 
+        @media (min-width: 901px) {
+          .nav-logo {
+            margin-left: -250px;
+          }
+          }
+        }
+
         .nav-logo-mark {
           width: 46px;
           height: 46px;
@@ -572,11 +579,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" className="nav-logo" aria-label="M.A. Williams & Co. Home">
-              {/* <div className="nav-logo-mark" aria-hidden="true"><span>M.A.W</span></div>
-              <div className="nav-logo-text">
-                <span className="nav-logo-name">M.A. WILLIAMS & CO.</span>
-              </div> */}
-              <img src="/assets/logomain.png" className="w-60" alt="Mawilliamsco logo" />
+              <img src="/assets/logomain.png" className="w-50" alt="Mawilliamsco logo" />
             </Link>
 
             {/* Desktop Nav */}
@@ -660,12 +663,7 @@ export default function Navbar() {
       >
         <div className="drawer-header">
           <Link to="/" className="nav-logo" onClick={() => setMenuOpen(false)} aria-label="M.A. Williams & Co.">
-            <div className="nav-logo-mark" aria-hidden="true">
-              <span>MAW</span>
-            </div>
-            <div className="nav-logo-text">
-              <span className="nav-logo-name">M.A. WILLIAMS & CO.</span>
-            </div>
+            <img src="/assets/logomain.png" alt="mawilliams logo" className="w-50" />
           </Link>
           <button className="drawer-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">
             ✕

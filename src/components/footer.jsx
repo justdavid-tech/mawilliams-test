@@ -311,12 +311,7 @@ export default function Footer() {
 
         <div className="footer-body">
           <div className="footer-brand">
-            <a href="/" className="footer-logo" aria-label="M.A. Williams & Co. home">
-              <div className="logo-mark" aria-hidden="true"><span>MAW</span></div>
-              <div className="logo-text-col">
-                <span className="logo-name">M.A. WILLIAMS & CO.</span>
-              </div>
-            </a>
+         <img src="/assets/logomain.png" className="w-52" alt="mawilliams logo" />
             <p className="footer-desc">
               International family office. IP repository. Agricultural education institution.
               Gateway to Africa. The apex of a purposefully built agribusiness group
