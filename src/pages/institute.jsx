@@ -211,7 +211,7 @@ function AboutInstitute() {
             <h2 className="section-heading" id="about-inst-heading">
               The Translation Gap Between Theory and Practice Is Where African Agriculture Loses Its Greatest Opportunity.
             </h2>
-            <img className=" lg:pr-[100px]" src="/assets/institute.jpeg" />
+            <img className=" lg:pr-[100px]" src="/assets/institute main.jpeg" />
           </div>
           <div className={`about-inst-right ${visible ? "anim-in-right" : ""}`}>
             <p className="inst-body">
