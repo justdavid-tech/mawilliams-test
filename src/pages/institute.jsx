@@ -561,7 +561,7 @@ function ClosingCTA() {
             The farm is ready.<br />The question is yours.
           </h2>
           <div className="cta-buttons">
-            <a href="/institute/courses" className="cta-btn-primary">Explore Courses</a>
+            {/* <a href="/institute/courses" className="cta-btn-primary">Explore Courses</a> */}
             <a href="/contact" className="cta-btn-ghost">Institutional Enquiry</a>
           </div>
         </div>

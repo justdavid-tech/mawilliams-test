@@ -4,7 +4,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Institute", href: "/institute" },
-  { label: "Gateway Consulting", href: "/gateway" },
+  { label: "Advisory", href: "/gateway" },
   { label: "Partners", href: "/partners" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Article", href: "/insights" },
@@ -13,7 +13,7 @@ const NAV_LINKS = [
 ];
 
 const GROUP_ENTITIES = [
-  { name: "M.A. Williams & Co.", role: "The architect — IP, education, international family office.", href: "/" },
+  { name: "M.A. Williams & Co.", role: "The architect — IP, education.", href: "/" },
   { name: "Lambert Willis Nigeria", role: "The active African arm — assets, land, local investments.", href: "/portfolio" },
   { name: "Gartner Callaway Group", role: "The operator — sustainability services & farm production.", href: "/portfolio" },
   { name: "Shaishen Foods - Hibiscus Estate JV", role: "200ha regenerative estate, Ogun State.", href: "/portfolio" },
@@ -304,7 +304,7 @@ export default function Footer() {
             </h2>
           </div>
           <div className="cta-banner-buttons">
-            <a href="/gateway" className="ft-btn-gold">Gateway Consulting</a>
+            <a href="/gateway" className="ft-btn-gold">Advisory</a>
             <a href="/contact" className="ft-btn-outline">Get in Touch</a>
           </div>
         </div>
@@ -313,7 +313,7 @@ export default function Footer() {
           <div className="footer-brand">
          <img src="/assets/logomain.png" className="w-52" alt="mawilliams logo" />
             <p className="footer-desc">
-              International family office. IP repository. Agricultural education institution.
+               IP repository. Agricultural education institution.
               Gateway to Africa. The apex of a purposefully built agribusiness group
               designed for longevity, not convenience.
             </p>

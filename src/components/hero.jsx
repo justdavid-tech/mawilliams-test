@@ -506,7 +506,7 @@ export default function Hero() {
             </h1>
  
             <p className={`hero-body ${visible ? "in" : ""}`}>
-              M.A. Williams & Co. is the international family office, IP repository,
+              M.A. Williams & Co. is the IP repository,
               and global contracting arm of the Yomi Williams Group, a purposefully
               structured ecosystem built over a decade of frontline agribusiness
               experience across Nigeria and the United Kingdom.
@@ -518,7 +518,7 @@ export default function Hero() {
                 <span className="btn-arrow" aria-hidden="true">→</span>
               </a>
               <a href="/gateway" className="btn-ghost">
-                Gateway Consulting
+                Advisory
               </a>
             </div>
  

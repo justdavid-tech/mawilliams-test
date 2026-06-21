@@ -42,7 +42,7 @@ const FUNCTIONS = [
   {
     num: "03",
     icon: Globe2,
-    title: "Gateway Consulting",
+    title: "Advisory",
     body: "We provide high-level strategic advisory to foreign businesses seeking structured, credible entry into African markets. Over a decade of operational experience, an active institutional network, and a multi-entity group structure built and stress-tested in Nigeria give M.A. Williams a perspective that no management consultancy, law firm, or development agency can replicate. Where conviction aligns, we invest alongside our clients.",
     tags: [
       "Market entry structuring",
@@ -52,7 +52,7 @@ const FUNCTIONS = [
     ],
     quote: null,
     cta: {
-      label: "Explore Gateway Consulting",
+      label: "Advisory",
       href: "/gateway",
     },
   },

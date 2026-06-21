@@ -13,20 +13,16 @@ const ROLES = [
     body: "The M.A. Williams Institute is our digital-first agricultural education platform. Every course, every certification, every Physical Advantage™ training session at our partner farm locations belongs here.",
   },
   {
-    id: "International Family Office",
-    body: "We hold international investments, land, property, and equity stakes in ventures across multiple markets. Every asset is held with the same long-term logic as the IP: protect it, grow it, make it outlast you.",
-  },
-  {
     id: "International Interface",
     body: "We are the primary contracting entity for international donors (USAID, GIZ, IFAD, Gates Foundation, FCDO), DFIs (AfDB, World Bank, AGRA), and global programme partners. UK registration, English law, and a clean governance record make us the natural counterparty.",
   },
   {
-    id: "Gateway Consulting",
+    id: "Advisory",
     body: "We provide high-level strategic advisory and market entry structuring to foreign businesses seeking credible access to African markets. Where conviction aligns, we invest alongside our clients.",
   },
   {
     id: "Group Architect",
-    body: "We operate in Africa through Lambert Willis, our African family office arm. We set the strategic direction, brand standards, and intellectual property framework that all operating entities operate within.",
+    body: "We operate in Africa through Lambert Willis, We set the strategic direction, brand standards, and intellectual property framework that all operating entities operate within.",
   },
 ];
 
@@ -34,13 +30,13 @@ const GROUP = [
   {
     name: "M.A. Williams & Co. UK",
     role: "The architect.",
-    desc: "IP, education, international family office, gateway consulting, international contracting, and personal brand anchor. The apex of the structure.",
+    desc: "IP, education, advisory, international contracting, and personal brand anchor. The apex of the structure.",
     tag: "London",
   },
   {
     name: "M.A. Williams & Co. Nigeria",
     role: "The Nigerian HoldCo.",
-    desc: "Local institutional anchor for the family office. Holds Nigerian land, property, and assets. Owns Lambert Willis.",
+    desc: "Local institutional anchor, Holds Nigerian land, property, and assets. Owns Lambert Willis.",
     tag: "Nigeria",
   },
   {
@@ -150,7 +146,7 @@ function Hero() {
             We Have Built The Intellectual Architecture For It And The Institutional Structure To Take It To The World.
           </p>
           <div className="hero-badges" style={{ marginTop: "28px" }}>
-            {["UK Registered", "30+ Years Experience", "Family Office", "Education Institution"].map((b) => (
+            {["UK Registered", "30+ Years Experience", "IP Holder", "Education Institution"].map((b) => (
               <span key={b} className="hero-badge">{b}</span>
             ))}
           </div>
@@ -160,7 +156,7 @@ function Hero() {
           {/* Gold accent line */}
           <div style={{ width: 48, height: 3, background: 'var(--gold)', marginBottom: 28, opacity: 0.8 }} aria-hidden="true" />
           <p className="hero-body">
-            M.A. Williams &amp; Co. Ltd is a UK-registered international family office and holding company the apex entity of a multi-entity agribusiness group spanning Nigeria and the United Kingdom.
+            M.A. Williams &amp; Co. Ltd is a UK-registered and holding company the apex entity of a multi-entity agribusiness group spanning Nigeria and the United Kingdom.
           </p>
           <p className="hero-body">
             We hold the trademarks, methodologies, and educational frameworks that the operating entities in our group are built upon. We manage a portfolio of international investments. We provide high-level strategic advisory to foreign businesses entering Africa.
@@ -419,7 +415,7 @@ function ClosingCTA() {
             The structure is built.<br />The question is yours.
           </h2>
           <div className="cta-buttons">
-            <a href="/gateway" className="cta-btn-primary">Gateway Consulting</a>
+            <a href="/gateway" className="cta-btn-primary">Advisory</a>
             <a href="/institute" className="cta-btn-secondary">Explore the Institute</a>
             <a href="/contact" className="cta-btn-ghost">Contact Us</a>
           </div>

@@ -10,9 +10,9 @@ const GROUP_ENTITIES = [
     role: "The Architect",
     name: "M.A. Williams & Co. UK",
     hq: "London, UK",
-    type: "International Family Office",
-    desc: "The apex of the group. Holds the IP, owns the Institute, governs the brand, contracts internationally, and provides the gateway consulting practice. UK-registered under English law.",
-    pillars: ["IP & Trademarks", "M.A. Williams Institute", "Gateway Consulting", "International Contracting"],
+    type: "Advisory Group",
+    desc: "The apex of the group. Holds the IP, owns the Institute, governs the brand, contracts internationally, and provides the advisory practice. UK-registered under English law.",
+    pillars: ["IP & Trademarks", "M.A. Williams Institute", "Advisory", "International Contracting"],
     accent: "#C9A84C",
   },
   {
@@ -22,7 +22,7 @@ const GROUP_ENTITIES = [
     name: "M.A. Williams & Co. Nigeria",
     hq: "Lagos, Nigeria",
     type: "Local institutional anchor",
-    desc: "The Nigerian HoldCo. Local institutional anchor for the family office. Holds Nigerian land, property, and assets. Provides the Nigerian institutional presence of the group.",
+    desc: "The Nigerian HoldCo. Local institutional anchor for Advisory Group. Holds Nigerian land, property, and assets. Provides the Nigerian institutional presence of the group.",
     pillars: ["Land Holdings", "Local Investments", "Proxy Directorship", "Land Use Act Navigation"],
     accent: "#3D6B42",
   },
@@ -32,7 +32,7 @@ const GROUP_ENTITIES = [
     role: "The Active African Arm",
     name: "Lambert Willis",
     hq: "Lagos, Nigeria",
-    type: "African Family Office",
+    type: "African Advisory Group",
     desc: "The operational vehicle. Executes consulting, advisory, and training under M.A. Williams brand capabilities. Holds a stake in the Gartner Callaway Group.",
     pillars: ["Land Holdings", "Local Investments", "Proxy Directorship", "Land Use Act Navigation"],
     accent: "#3D6B42",
@@ -213,10 +213,10 @@ function TheGroup() {
           </div>
           <div className="pef-right">
             <p className="pef-desc">
-              The apex entity of the group. M.A. Williams & Co. holds the trademarks, proprietary methodologies, and curriculum frameworks that every operating entity runs on. It owns the Institute. It runs the Gateway Consulting practice. It contracts internationally with donors and DFIs. It is the institutional expression of Yomi Williams's life's work structured for longevity, governed under English law.
+              The apex entity of the group. M.A. Williams & Co. holds the trademarks, proprietary methodologies, and curriculum frameworks that every operating entity runs on. It owns the Institute. It runs the advisory practice. It contracts internationally with donors and DFIs. It is the institutional expression of Yomi Williams's life's work structured for longevity, governed under English law.
             </p>
             <div className="pef-tags">
-              {["IP & Trademarks", "M.A. Williams Institute", "Gateway Consulting", "International Contracting", "Family Office"].map(t => (
+              {["IP & Trademarks", "M.A. Williams Institute", "advisory", "International Contracting"].map(t => (
                 <span key={t} className="pef-tag">{t}</span>
               ))}
             </div>
@@ -422,7 +422,7 @@ function ClosingCTA() {
             Whether you are a foreign business seeking structured market entry, a donor or DFI looking for a credible implementation partner, or a practitioner who wants to learn what was built here, the structure exists to serve you.
           </p>
           <div className="port-cta-btns">
-            <a href="/gateway" className="pcta-btn-gold">Gateway Consulting</a>
+            <a href="/gateway" className="pcta-btn-gold">Advisory</a>
             <a href="/institute" className="pcta-btn-green">Explore the Institute</a>
             <a href="/contact" className="pcta-btn-ghost">Contact Us</a>
           </div>

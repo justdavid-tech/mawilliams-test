@@ -103,7 +103,7 @@ export default function Navbar() {
 
         @media (min-width: 901px) {
           .nav-logo {
-            margin-left: -150px;
+            margin-left: -20px;
           }
           }
         }

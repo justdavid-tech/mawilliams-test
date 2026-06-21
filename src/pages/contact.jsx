@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 const CONTACT_PATHS = [
   {
     num: "01",
-    title: "Gateway Consulting",
+    title: "Advisory",
     audience: "Foreign businesses",
     desc: "For foreign businesses seeking market entry advisory, structural guidance, or a strategic advisory relationship. Request a scoping call. Yomi Williams responds personally.",
     response: "3 working days",
@@ -145,7 +145,7 @@ function SuccessModal({ name, enquiryTitle, onClose }) {
           <div className="ct-modal-reminder">
             <span className="ct-modal-reminder-dot" aria-hidden="true" />
             <span>
-              {enquiryTitle === "Gateway Consulting" || enquiryTitle === "Explore the Institute"
+              {enquiryTitle === "Advisory" || enquiryTitle === "Explore the Institute"
                 ? "Expected response within 24 hours"
                 : "Expected response within 24 hours"}
             </span>
@@ -508,7 +508,7 @@ function ContactForm({ selectedPath }) {
               <div className="ct-sidebar-divider" aria-hidden="true" />
 
               <p className="ct-sidebar-note">
-                Gateway Consulting enquiries are reviewed and responded to personally by Yomi Williams.
+                Advisory enquiries are reviewed and responded to personally by Yomi Williams.
                 Please include your company name, country of operation, and a brief description of your
                 African market objectives.
               </p>
@@ -645,7 +645,7 @@ function ClosingCTA() {
             <span style={{ color: "#C9A84C" }}>Explore the group.</span>
           </h2>
           <div className="ct-cta-btns">
-            <a href="/gateway" className="ct-btn-gold">Gateway Consulting</a>
+            <a href="/gateway" className="ct-btn-gold">Advisory</a>
             <a href="/institute" className="ct-btn-green">The Institute</a>
             <a href="/partners" className="ct-btn-ghost">Partner With Us</a>
           </div>

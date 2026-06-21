@@ -614,7 +614,7 @@ function CoInvestment() {
               On every Tier 2 and Tier 3 engagement, M.A. Williams reserves the right, not the obligation, to co-invest in the client's African venture, at the same price and on the same terms as the founding shareholders. This is not a standard advisory arrangement. It is the basis of a genuine long-term partnership, where M.A. Williams has material interest in the outcome alongside the client.
             </p>
             <p className="ip-ci-body">
-              When M.A. Williams exercises a co-investment right, the stake in any African entity is held through Lambert Willis Nigeria, our African family office arm, providing local shareholding, directorship, and ongoing representation on the ground.
+              When M.A. Williams exercises a co-investment right, the stake in any African entity is held through Lambert Willis, providing local shareholding, directorship, and ongoing representation on the ground.
             </p>
           </div>
 
@@ -632,7 +632,7 @@ function CoInvestment() {
                 {[
                   { point: "Right, not obligation", detail: "M.A. Williams may elect to co-invest. It is never automatic or compulsory." },
                   { point: "Same terms, always", detail: "Co-investment is at the same price and on the same terms as the founding shareholders. No preferred terms." },
-                  { point: "Held through Lambert Willis", detail: "The stake is held through our African family office arm, providing local shareholding and directorship on the ground." },
+                  { point: "Held through Lambert Willis", detail: "The stake is held through Lambert Willis, providing local shareholding and directorship on the ground." },
                   { point: "Tier 2 and Tier 3 only", detail: "Co-investment rights are reserved on Entry Structuring and Strategic Partnership engagements, not Market Architecture." },
                 ].map((m, i) => (
                   <div key={i} className="ip-ci-mech-item">
