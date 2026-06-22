@@ -51,7 +51,7 @@ export default function CapabilityStrip() {
       description: "Entity governed under English law"
     },
     {
-      number: "30+",
+      number: "10+",
       suffix: "",
       label: "Years",
       description: "Of operational experience"

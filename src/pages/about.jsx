@@ -146,7 +146,7 @@ function Hero() {
             We Have Built The Intellectual Architecture For It And The Institutional Structure To Take It To The World.
           </p>
           <div className="hero-badges" style={{ marginTop: "28px" }}>
-            {["UK Registered", "30+ Years Experience", "IP Holder", "Education Institution"].map((b) => (
+            {["UK Registered", "10+ Years Experience", "IP Holder", "Education Institution"].map((b) => (
               <span key={b} className="hero-badge">{b}</span>
             ))}
           </div>
@@ -204,7 +204,7 @@ function WhatWeAre() {
             What M.A. Williams & Co. Is
           </h2>
           <p className="section-sub sub-text">
-            We are not a consulting firm. We are not a development agency. We are the structural and intellectual heart of a group deliberately designed to protect what was built, scale what works, teach what has been learned, and guide those who come after.
+          We are the structural and intellectual heart of a group deliberately designed to protect what was built, scale what works, teach what has been learned, and guide those who come after.
           </p>
         </div>
 

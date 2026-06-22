@@ -71,7 +71,7 @@ const PARTNERSHIP_TYPES = [
 ];
 
 const CREDENTIALS = [
-  { num: "30+", label: "Years field experience" },
+  { num: "10+", label: "Years field experience" },
   { num: "200ha", label: "Live production estate" },
   { num: "1,000+", label: "Practitioners trained" },
   { num: "5+", label: "Donor organisations worked with" },

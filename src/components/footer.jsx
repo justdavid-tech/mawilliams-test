@@ -27,7 +27,6 @@ const INSTITUTE_LINKS = [
   { label: "Bankable Blueprints™", href: "/institute#blueprints" },
   { label: "Delivery Formats", href: "/institute#delivery" },
   { label: "Institutional Licensing", href: "/institute#licensing" },
-  { label: "Enrol Now", href: "/contact" },
 ];
 
 const SOCIALS = [

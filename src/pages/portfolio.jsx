@@ -34,7 +34,7 @@ const GROUP_ENTITIES = [
     hq: "Lagos, Nigeria",
     type: "African Advisory Group",
     desc: "The operational vehicle. Executes consulting, advisory, and training under M.A. Williams brand capabilities. Holds a stake in the Gartner Callaway Group.",
-    pillars: ["Land Holdings", "Local Investments", "Proxy Directorship", "Land Use Act Navigation"],
+    pillars: ["Consulting", "Advisory", "Training", "Brand Capabilities"],
     accent: "#3D6B42",
   },
   {
@@ -163,7 +163,7 @@ function Hero() {
           </p>
           <div className="port-hero-stats">
             {[
-              ["30+", "Years in the field"],
+              ["10+", "Years in the field"],
               ["200ha", "Live production estate"],
               ["5", "Active brands"],
               ["3", "Countries of operation"],

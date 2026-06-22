@@ -180,11 +180,6 @@ function Hero() {
               Explore Courses
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
-            <Link to="/institute/enrol" className="hero-cta-ghost"
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)"; e.currentTarget.style.color = "#fff"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)"; e.currentTarget.style.color = "rgba(255,255,255,0.65)"; }}>
-              Enroll Now
-            </Link>
           </div>
         </div>
       </div>
