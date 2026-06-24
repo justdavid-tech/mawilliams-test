@@ -13,8 +13,9 @@ const NAV_LINKS = [
 ];
 
 const GROUP_ENTITIES = [
-  { name: "M.A. Williams & Co.", role: "The architect — IP, education.", href: "/" },
-  { name: "Lambert Willis Nigeria", role: "The active African arm — assets, land, local investments.", href: "/portfolio" },
+  { name: "M.A. Williams & Co. UK", role: "The architect — IP, education, advisory, international contracting.", href: "/" },
+  { name: "M.A. Williams & Co Nigeria", role: "The active African Arm - assets and local investments", href: "/" },
+  { name: "Lambert Willis Nigeria", role: "The active African arm — operations ", href: "/portfolio" },
   { name: "Gartner Callaway Group", role: "The operator — sustainability services & farm production.", href: "/portfolio" },
   { name: "Shaishen Foods - Hibiscus Estate JV", role: "200ha regenerative estate, Ogun State.", href: "/portfolio" },
   { name: "EZ Gro Garden", role: "Vertical Hydroponic Partner (Africa · Europe · Middle East)", href: "/portfolio" },
@@ -317,7 +318,7 @@ export default function Footer() {
               designed for longevity, not convenience.
             </p>
             <div className="footer-contact">
-              <div className="contact-item">
+              {/* <div className="contact-item">
                 <div className="contact-dot" aria-hidden="true" />
                 <span className="contact-text">
                   71–75 Shelton Street, Covent Garden,<br />London WC2H 9JQ
@@ -328,7 +329,7 @@ export default function Footer() {
                 <span className="contact-text">
                   <a href="tel:+447444167970">+44 7444 167 970</a>
                 </span>
-              </div>
+              </div> */}
               <div className="contact-item">
                 <div className="contact-dot" aria-hidden="true" />
                 <span className="contact-text">

@@ -74,7 +74,7 @@ export default function UpperHeader() {
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 lg:justify-start">
 
             {/* Phone */}
-            <a
+            {/* <a
               href="tel:+2348185811939"
               className="group flex items-center gap-2 text-[11px] sm:text-[12px] font-medium font-sans transition-colors hover:text-[#C9A84C]"
             >
@@ -83,10 +83,10 @@ export default function UpperHeader() {
                 className="text-[#C9A84C] transition-transform duration-200 group-hover:scale-110"
               />
               <span className="tracking-wide">+44 7444 167 970</span>
-            </a>
+            </a> */}
 
             {/* Email */}
-            <a
+            {/* <a
               href="mailto:info@mawilliamsco.com"
               className="group flex items-center gap-2 text-[11px] sm:text-[12px] font-medium font-sans transition-colors hover:text-[#C9A84C]"
             >
@@ -95,10 +95,10 @@ export default function UpperHeader() {
                 className="text-[#C9A84C] transition-transform duration-200 group-hover:scale-110"
               />
               <span className="tracking-wide">info@mawilliamsco.com</span>
-            </a>
+            </a> */}
 
             {/* Address */}
-            <div className="hidden xl:flex items-center gap-2 text-[11px] font-medium font-sans opacity-90">
+            {/* <div className="hidden xl:flex items-center gap-2 text-[11px] font-medium font-sans opacity-90">
               <MapPin
                 size={14}
                 className="flex-shrink-0 text-[#C9A84C]"
@@ -106,7 +106,7 @@ export default function UpperHeader() {
               <span className="truncate tracking-wide">
                  71–75 Shelton Street, Covent Garden, London WC2H 9JQ
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Side Social */}

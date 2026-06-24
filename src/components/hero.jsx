@@ -524,7 +524,7 @@ export default function Hero() {
  
             <div className={`hero-stats ${visible ? "in" : ""}`}>
               <div className="stat">
-                <span className="stat-num">30<span>+</span></span>
+                <span className="stat-num">10<span>+</span></span>
                 <span className="stat-label">Years frontline</span>
               </div>
               <div className="stat-divider" />
