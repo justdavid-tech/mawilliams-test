@@ -66,7 +66,7 @@ const ADVANTAGE = [
   },
   {
     name: "Physical Validation",
-    body: "Partner farm locations including our 200-hectare Ogun State estate, serve as live training centres. Students attend scheduled immersion sessions to practicalise their coursework in real commercial conditions.",
+    body: "Our farm locations and any partner locations serve as live training centres. Students attend scheduled immersion sessions to practicalise their coursework in real commercial conditions.",
   },
   {
     name: "Business Translation",

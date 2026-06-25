@@ -79,7 +79,7 @@ const FUNCTIONS = [
       "Lambert Willis",
       "Gartner Callaway",
       "M.A. Williams Institute",
-      "Hibiscus Estate JV",
+      "Shaishen",
     ],
     quote: {
       text: "I am not building businesses. I am building a structure where knowledge is protected, land is secured, and impact is delivered in that order because that sequence determines whether what we build lasts a decade.",

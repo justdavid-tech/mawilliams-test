@@ -200,24 +200,10 @@ function Hero() {
             <a href="mailto:info@mawilliamsco.com" className="ct-hero-email">
               info@mawilliamsco.com
             </a>
-            <div className="ct-hero-phones">
-              <a href="tel:+447444167970" className="ct-hero-phone">+44 7444 167 970 (UK)</a>
-              <span className="ct-hero-phone-sep" aria-hidden="true">·</span>
-              <a href="tel:+2348185811939" className="ct-hero-phone">+234 818 581 1939 (NG)</a>
-            </div>
           </div>
         </div>
 
         <div className={`ct-hero-right ${vis ? "ct-vis-right" : ""}`}>
-          <div className="ct-hero-card">
-            <p className="ct-hero-card-label">Personal site</p>
-            <p className="ct-hero-card-body">
-              For Yomi Williams's full profile, featured work, speaking record, and media enquiries.
-            </p>
-            <a href="https://www.yomiwilliams.com" target="_blank" rel="noopener noreferrer" className="ct-hero-card-link">
-              yomiwilliams.com →
-            </a>
-          </div>
           <div className="ct-hero-card" style={{ marginTop: 12 }}>
             <p className="ct-hero-card-label">Gartner Callaway</p>
             <p className="ct-hero-card-body">
@@ -484,17 +470,6 @@ function ContactForm({ selectedPath }) {
                   info@mawilliamsco.com
                 </a>
               </div>
-
-              <div className="ct-sidebar-item">
-                <span className="ct-sidebar-item-title">UK Office</span>
-                <a href="tel:+447444167970" className="ct-sidebar-link">+44 7444 167 970</a>
-              </div>
-
-              <div className="ct-sidebar-item">
-                <span className="ct-sidebar-item-title">Nigeria Office</span>
-                <a href="tel:+2348185811939" className="ct-sidebar-link">+234 818 581 1939</a>
-              </div>
-
               <div className="ct-sidebar-divider" aria-hidden="true" />
 
               <p className="ct-sidebar-label">Response windows</p>
@@ -584,25 +559,6 @@ function Offices() {
 
               <div className="ct-office-role">{o.role}</div>
 
-              <div className="ct-office-address-block">
-                <p className="ct-office-detail-label">Address</p>
-                <p className="ct-office-address">{o.address}</p>
-              </div>
-
-          <div className="ct-office-address-block">
-  <p className="ct-office-detail-label">Phone</p>
-  <div className="flex flex-col gap-1"> {/* Flex container to stack multiple numbers */}
-    {o.phone.map((number, index) => (
-      <a 
-        key={index} 
-        href={`tel:${number.replace(/\s/g, "")}`} 
-        className="ct-office-phone block"
-      >
-        {number}
-      </a>
-    ))}
-  </div>
-</div>
 
               <div className="ct-office-address-block">
                 <p className="ct-office-detail-label">Email</p>

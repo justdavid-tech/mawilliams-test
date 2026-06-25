@@ -64,7 +64,6 @@ export default function Profile() {
           object-fit: cover;
           object-position: center top;
           display: block;
-          border: 3px solid var(--color-gold-accent, #C9A84C);
         }
 
 
@@ -74,7 +73,6 @@ export default function Profile() {
           right: -6px;
           width: 100%;
           height: 100%;
-          border: 2px solid rgba(201,168,76,0.25);
           border-radius: 4px;
           pointer-events: none;
         }

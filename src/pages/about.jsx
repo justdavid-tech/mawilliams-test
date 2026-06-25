@@ -156,7 +156,7 @@ function Hero() {
           {/* Gold accent line */}
           <div style={{ width: 48, height: 3, background: 'var(--gold)', marginBottom: 28, opacity: 0.8 }} aria-hidden="true" />
           <p className="hero-body">
-            M.A. Williams &amp; Co. Ltd is a UK-registered and holding company the apex entity of a multi-entity agribusiness group spanning Nigeria and the United Kingdom.
+            M.A. Williams &amp; Co. Ltd is the apex entity of a multi-entity agribusiness group spanning Nigeria and the United Kingdom.
           </p>
           <p className="hero-body">
             We hold the trademarks, methodologies, and educational frameworks that the operating entities in our group are built upon. We manage a portfolio of international investments. We provide high-level strategic advisory to foreign businesses entering Africa.
@@ -303,15 +303,6 @@ function Founder() {
             <p className="founder-body">
               The intellectual work that M.A. Williams & Co. holds is not theoretical. It was built in the field, tested under pressure, and refined over a decade of frontline agricultural development.
             </p>
-
-            <a
-              href="https://www.yomiwilliams.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="founder-link"
-            >
-              Full profile at yomiwilliams.com →
-            </a>
           </div>
 
           {/* Right — awards */}

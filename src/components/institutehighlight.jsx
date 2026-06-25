@@ -28,7 +28,7 @@ const ADVANTAGES = [
   },
   {
     label: "Physical Validation",
-    body: "Our 200-hectare Ogun State estate serves as a live training centre. Students practicalise coursework in real commercial conditions.",
+    body: "All of our commercial activities serves as a live training centre. Students practicalise coursework in real commercial conditions.",
   },
   {
     label: "Business Translation",
