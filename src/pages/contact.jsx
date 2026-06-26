@@ -196,11 +196,6 @@ function Hero() {
             agribusiness investors, foreign businesses seeking structured African market entry,
             and institutional partners operating across West Africa and the global agri-food system.
           </p>
-          <div className="ct-hero-direct">
-            <a href="mailto:info@mawilliamsco.com" className="ct-hero-email">
-              info@mawilliamsco.com
-            </a>
-          </div>
         </div>
 
         <div className={`ct-hero-right ${vis ? "ct-vis-right" : ""}`}>
@@ -483,9 +478,7 @@ function ContactForm({ selectedPath }) {
               <div className="ct-sidebar-divider" aria-hidden="true" />
 
               <p className="ct-sidebar-note">
-                Advisory enquiries are reviewed and responded to personally by Yomi Williams.
-                Please include your company name, country of operation, and a brief description of your
-                African market objectives.
+                Please include your company name, country of operation, and a brief description of your objectives.
               </p>
             </div>
           </div>
