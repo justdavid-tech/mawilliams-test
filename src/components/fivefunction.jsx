@@ -74,7 +74,7 @@ const FUNCTIONS = [
     num: "05",
     icon: Layers3,
     title: "Group Architecture & Legacy",
-    body: "M.A. Williams & Co. is the apex of a multi-entity group built for longevity, not convenience. Lambert Willis holds the African assets and represents M.A. Williams in every African venture. Gartner Callaway delivers the services. The Institute disseminates the knowledge. M.A. Williams holds the architecture together protecting the IP, anchoring the brand, and ensuring that the intellectual work of a lifetime outlasts any single venture.",
+    body: "M.A. Williams & Co. is the apex of a multi-entity group built for longevity, not convenience. M.A Williams & Co Nigeria holds the African assets and represents the group in African ventures. Gartner Callaway delivers the services. The Institute disseminates the knowledge. M.A. Williams holds the architecture together protecting the IP, anchoring the brand, and ensuring that the intellectual work of a lifetime outlasts any single venture.",
     tags: [
       "Lambert Willis",
       "Gartner Callaway",

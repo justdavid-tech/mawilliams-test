@@ -268,7 +268,7 @@ function GroupStructure() {
         <div className={`investor-note ${visible ? "anim-in" : ""}`} style={{ animationDelay: "0.42s" }}>
           <span className="investor-note-label" aria-hidden="true">For investors & partners</span>
           <p className="investor-note-body">
-            The separation of IP (M.A. Williams UK), assets (M.A. Williams Nigeria), and operations (Gartner Callaway) is intentional and protective. If you invest in or partner with any part of the group, you are engaging with a properly governed, structurally sound entity, not an ad hoc arrangement.
+            The separation of IP (M.A. Williams UK), (Lambert Willis), and (Gartner Callaway) is intentional and protective. If you invest in or partner with any part of the group, you are engaging with a properly governed, structurally sound entity, not an ad hoc arrangement.
           </p>
         </div>
       </div>

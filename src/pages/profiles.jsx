@@ -60,7 +60,7 @@ export default function Profile() {
         .prof-avatar {
           width: 260px;
           height: 260px;
-          border-radius: 4px;
+          // border-radius: 4px;
           object-fit: cover;
           object-position: center top;
           display: block;
@@ -274,7 +274,7 @@ export default function Profile() {
             <div className="prof-avatar-wrap">
               {/* Replace src with your image path */}
               <img
-                src="/assets/profile-1.jpg"
+                src="/assets/profile-1.png"
                 alt="Chickezie Evulukwu"
                 className="prof-avatar"
               />

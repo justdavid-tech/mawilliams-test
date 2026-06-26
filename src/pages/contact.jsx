@@ -511,73 +511,8 @@ function Offices() {
             <span className="ct-pip" aria-hidden="true" />
             <span className="ct-kicker-text">Our offices</span>
           </div>
-          <h2 className="ct-section-h" id="ct-offices-h">Lagos</h2>
-          <p className="ct-section-sub">
-            One office in Lagos, Nigeria. One group. Lagos-based for field delivery.
-          </p>
+          <h2 className="ct-section-h" id="ct-offices-h">Lagos-London</h2>
         </div>
-
-        <div className={`ct-office-toggle ${vis ? "ct-vis-up" : ""}`} style={{ animationDelay: "0.1s" }}>
-          {OFFICES.map((o, i) => (
-            <button
-              key={o.city}
-              className={`ct-office-tab ${activeOffice === i ? "ct-office-tab--active" : ""}`}
-              onClick={() => setActiveOffice(i)}
-              aria-pressed={activeOffice === i}
-            >
-              <span aria-hidden="true">{o.flag}</span> {o.city}
-            </button>
-          ))}
-        </div>
-
-        {OFFICES.map((o, i) => (
-          <div
-            key={o.city}
-            className={`ct-office-panel ${activeOffice === i ? "ct-office-panel--active" : ""} ${vis ? "ct-vis-up" : ""}`}
-            style={{ animationDelay: "0.18s" }}
-            hidden={activeOffice !== i}
-            aria-label={`${o.city} office`}
-          >
-            <div className="ct-map-wrap">
-              <iframe
-                title={`${o.city} office map`}
-                src={o.mapUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-
-            <div className="ct-office-details">
-              <div className="ct-office-city-row">
-                <span className="ct-office-flag" aria-hidden="true">{o.flag}</span>
-                <h3 className="ct-office-city">{o.city}</h3>
-              </div>
-
-              <div className="ct-office-role">{o.role}</div>
-
-
-              <div className="ct-office-address-block">
-                <p className="ct-office-detail-label">Email</p>
-                <a href="mailto:info@mawilliamsco.com" className="ct-office-phone">
-                  info@mawilliamsco.com
-                </a>
-              </div>
-
-              <a
-                href={`https://maps.google.com/?q=${encodeURIComponent(o.address.replace(/\n/g, ", "))}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ct-office-directions"
-              >
-                Get directions →
-              </a>
-            </div>
-          </div>
-        ))}
       </div>
     </section>
   );
